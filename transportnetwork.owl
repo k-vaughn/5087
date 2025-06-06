@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:ns0="https://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:ns1="https://www.w3.org/2000/01/rdf-schema#">
+
+  <rdf:Description rdf:about="https://standards.iso.org/iso-iec/5087/-3/ed-1/en/ontology">
+    <ns0:type rdf:resource="https://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+
+  <rdf:Description rdf:about="https://standards.iso.org/iso-iec/5087/-3/ed-1/en/ontology/#egress">
+    <ns0:type rdf:resource="https://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <ns1:domain>
+      <rdf:Description rdf:about="https://standards.iso.org/iso-iec/5087/-3/ed-1/en/ontology/#TransportNode">
+        <ns0:type rdf:resource="https://www.w3.org/2002/07/owl#Class"/>
+      </rdf:Description>
+    </ns1:domain>
+
+    <ns1:range>
+      <rdf:Description rdf:about="https://standards.iso.org/iso-iec/5087/-3/ed-1/en/ontology/#TravelledWayLink">
+        <ns0:type rdf:resource="https://www.w3.org/2002/07/owl#Class"/>
+      </rdf:Description>
+    </ns1:range>
+
+  </rdf:Description>
+
+</rdf:RDF>
