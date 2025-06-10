@@ -1,0 +1,62 @@
+@prefix : <http://example.org/its#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+:ITS_Ontology a owl:Ontology ;
+    rdfs:comment "Ontology for Intelligent Transport Systems" .
+
+# Classes
+:Vehicle a owl:Class ;
+    rdfs:label "Vehicle" ;
+    rdfs:comment "A mode of transport such as a car, bus, or truck" .
+
+:Road a owl:Class ;
+    rdfs:label "Road" ;
+    rdfs:comment "A physical road or highway" .
+
+:TrafficSignal a owl:Class ;
+    rdfs:label "Traffic Signal" ;
+    rdfs:comment "A device controlling traffic flow" .
+
+:Sensor a owl:Class ;
+    rdfs:label "Sensor" ;
+    rdfs:comment "A device collecting traffic or environmental data" .
+
+# Object Properties
+:hasLocation a owl:ObjectProperty ;
+    rdfs:domain :Vehicle, :Road, :TrafficSignal, :Sensor ;
+    rdfs:range :Location ;
+    rdfs:label "has location" .
+
+:controlsTraffic a owl:ObjectProperty ;
+    rdfs:domain :TrafficSignal ;
+    rdfs:range :Road ;
+    rdfs:label "controls traffic" .
+
+# Data Properties
+:hasSpeed a owl:DatatypeProperty ;
+    rdfs:domain :Vehicle ;
+    rdfs:range xsd:float ;
+    rdfs:label "has speed" .
+
+:hasStatus a owl:DatatypeProperty ;
+    rdfs:domain :TrafficSignal ;
+    rdfs:range xsd:string ;
+    rdfs:label "has status" .
+
+# Example Individuals
+:Car1 a :Vehicle ;
+    :hasSpeed "60.5"^^xsd:float ;
+    :hasLocation :Loc1 .
+
+:Signal1 a :TrafficSignal ;
+    :hasStatus "Green" ;
+    :controlsTraffic :Road1 .
+
+:Road1 a :Road ;
+    :hasLocation :Loc2 .
+
+:Sensor1 a :Sensor ;
+    :hasLocation :Loc3 .
