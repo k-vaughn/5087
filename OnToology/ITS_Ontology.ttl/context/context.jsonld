@@ -1,0 +1,41 @@
+{
+  "@context" : {
+    "hasSpeed" : {
+      "@id" : "http://example.org/its#hasSpeed",
+      "@type" : "http://www.w3.org/2001/XMLSchema#float"
+    },
+    "Road" : {
+      "@id" : "http://example.org/its#Road"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "Location" : {
+      "@id" : "http://example.org/its#Location"
+    },
+    "hasStatus" : {
+      "@id" : "http://example.org/its#hasStatus",
+      "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "TrafficSignal" : {
+      "@id" : "http://example.org/its#TrafficSignal"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "Vehicle" : {
+      "@id" : "http://example.org/its#Vehicle"
+    },
+    "hasLocation" : {
+      "@id" : "http://example.org/its#hasLocation",
+      "@type" : "@id"
+    },
+    "controlsTraffic" : {
+      "@id" : "http://example.org/its#controlsTraffic",
+      "@type" : "@id"
+    },
+    "Sensor" : {
+      "@id" : "http://example.org/its#Sensor"
+    }
+  }
+}
