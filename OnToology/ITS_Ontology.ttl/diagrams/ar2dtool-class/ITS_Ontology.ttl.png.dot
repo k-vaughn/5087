@@ -1,0 +1,14 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1501"
+node [shape = rectangle, color="orange"]; "base:TrafficSignal" "base:Road" "base:Vehicle" ; /*classes style*/
+	"base:Sensor1" -> "base:Loc3" [ label = "base:hasLocation" ];
+	"base:Road1" -> "base:Loc2" [ label = "base:hasLocation" ];
+	"base:Car1" -> "base:Loc1" [ label = "base:hasLocation" ];
+	"base:Signal1" -> "base:Road1" [ label = "base:controlsTraffic" ];
+	"base:Vehicle" -> "base:Location" [ label = "base:hasLocation" ];
+	"base:Vehicle" -> "xsd:float" [ label = "base:hasSpeed" ];
+	"base:TrafficSignal" -> "xsd:string" [ label = "base:hasStatus" ];
+	"base:TrafficSignal" -> "base:Road" [ label = "base:controlsTraffic" ];
+
+}
