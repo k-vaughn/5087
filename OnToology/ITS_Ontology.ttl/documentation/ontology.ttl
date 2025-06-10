@@ -1,0 +1,125 @@
+@prefix : <http://example.org/its#ITS_Ontology> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://example.org/its#ITS_Ontology> .
+
+<http://example.org/its#ITS_Ontology> rdf:type owl:Ontology ;
+                                       rdfs:comment "Ontology for Intelligent Transport Systems" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://example.org/its#controlsTraffic
+<http://example.org/its#controlsTraffic> rdf:type owl:ObjectProperty ;
+                                         rdfs:domain <http://example.org/its#TrafficSignal> ;
+                                         rdfs:range <http://example.org/its#Road> ;
+                                         rdfs:label "controls traffic" .
+
+
+###  http://example.org/its#hasLocation
+<http://example.org/its#hasLocation> rdf:type owl:ObjectProperty ;
+                                     rdfs:domain <http://example.org/its#Road> ,
+                                                 <http://example.org/its#Sensor> ,
+                                                 <http://example.org/its#TrafficSignal> ,
+                                                 <http://example.org/its#Vehicle> ;
+                                     rdfs:range <http://example.org/its#Location> ;
+                                     rdfs:label "has location" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://example.org/its#hasSpeed
+<http://example.org/its#hasSpeed> rdf:type owl:DatatypeProperty ;
+                                  rdfs:domain <http://example.org/its#Vehicle> ;
+                                  rdfs:range xsd:float ;
+                                  rdfs:label "has speed" .
+
+
+###  http://example.org/its#hasStatus
+<http://example.org/its#hasStatus> rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain <http://example.org/its#TrafficSignal> ;
+                                   rdfs:range xsd:string ;
+                                   rdfs:label "has status" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://example.org/its#Location
+<http://example.org/its#Location> rdf:type owl:Class .
+
+
+###  http://example.org/its#Road
+<http://example.org/its#Road> rdf:type owl:Class ;
+                              rdfs:comment "A physical road or highway" ;
+                              rdfs:label "Road" .
+
+
+###  http://example.org/its#Sensor
+<http://example.org/its#Sensor> rdf:type owl:Class ;
+                                rdfs:comment "A device collecting traffic or environmental data" ;
+                                rdfs:label "Sensor" .
+
+
+###  http://example.org/its#TrafficSignal
+<http://example.org/its#TrafficSignal> rdf:type owl:Class ;
+                                       rdfs:comment "A device controlling traffic flow" ;
+                                       rdfs:label "Traffic Signal" .
+
+
+###  http://example.org/its#Vehicle
+<http://example.org/its#Vehicle> rdf:type owl:Class ;
+                                 rdfs:comment "A mode of transport such as a car, bus, or truck" ;
+                                 rdfs:label "Vehicle" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://example.org/its#Car1
+<http://example.org/its#Car1> rdf:type owl:NamedIndividual ,
+                                       <http://example.org/its#Vehicle> ;
+                              <http://example.org/its#hasLocation> <http://example.org/its#Loc1> ;
+                              <http://example.org/its#hasSpeed> "60.5"^^xsd:float .
+
+
+###  http://example.org/its#Loc1
+<http://example.org/its#Loc1> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/its#Loc2
+<http://example.org/its#Loc2> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/its#Loc3
+<http://example.org/its#Loc3> rdf:type owl:NamedIndividual .
+
+
+###  http://example.org/its#Road1
+<http://example.org/its#Road1> rdf:type owl:NamedIndividual ,
+                                        <http://example.org/its#Road> ;
+                               <http://example.org/its#hasLocation> <http://example.org/its#Loc2> .
+
+
+###  http://example.org/its#Sensor1
+<http://example.org/its#Sensor1> rdf:type owl:NamedIndividual ,
+                                          <http://example.org/its#Sensor> ;
+                                 <http://example.org/its#hasLocation> <http://example.org/its#Loc3> .
+
+
+###  http://example.org/its#Signal1
+<http://example.org/its#Signal1> rdf:type owl:NamedIndividual ,
+                                          <http://example.org/its#TrafficSignal> ;
+                                 <http://example.org/its#controlsTraffic> <http://example.org/its#Road1> ;
+                                 <http://example.org/its#hasStatus> "Green" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
