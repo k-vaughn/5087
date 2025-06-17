@@ -1,0 +1,84 @@
+<http://isotc204.org/25965/class-scheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<http://isotc204.org/25965/class-scheme> <http://purl.org/dc/terms/description> "An ontology for catalogs described by classification schemes"@en .
+<http://isotc204.org/25965/class-scheme> <http://purl.org/dc/terms/title> "Class Scheme Ontology"@en .
+<http://isotc204.org/25965/class-scheme> <http://www.w3.org/2002/07/owl#versionInfo> "1.0"@en .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://isotc204.org/25965/class-scheme#describedByScheme
+<https://isotc204.org/25965/class-scheme#describedByScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://isotc204.org/25965/class-scheme#describedByScheme> <http://www.w3.org/2000/01/rdf-schema#range> <https://isotc204.org/25965/class-scheme#ClassificationScheme> .
+<https://isotc204.org/25965/class-scheme#describedByScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "Links a catalogue to the classification scheme that categorizes its concepts."@en .
+<https://isotc204.org/25965/class-scheme#describedByScheme> <http://www.w3.org/2000/01/rdf-schema#label> "described by scheme"@en .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2000/01/rdf-schema#Resource
+<http://www.w3.org/2000/01/rdf-schema#Resource> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# http://www.w3.org/2004/02/skos/core#ConceptScheme
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<http://www.w3.org/2004/02/skos/core#ConceptScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/class-scheme#ClassificationScheme> .
+# 
+# https://isotc204.org/25965/class-scheme#ClassificationScheme
+<https://isotc204.org/25965/class-scheme#ClassificationScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/class-scheme#ClassificationScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2000/01/rdf-schema#Resource> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <http://purl.org/dc/terms/creator> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/class-scheme#ClassificationScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2002/07/owl#versionInfo> .
+<http://www.w3.org/2002/07/owl#versionInfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/class-scheme#ClassificationScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#someValuesFrom> <http://www.w3.org/2000/01/rdf-schema#Literal> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <http://www.w3.org/2004/02/skos/core#prefLabel> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/class-scheme#ClassificationScheme> <http://www.w3.org/2000/01/rdf-schema#comment> "A scheme for categorizing entities, such as traffic regulations. Subclasses include skos:ConceptScheme."@en .
+<https://isotc204.org/25965/class-scheme#ClassificationScheme> <http://www.w3.org/2000/01/rdf-schema#label> "Classification Scheme"@en .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
