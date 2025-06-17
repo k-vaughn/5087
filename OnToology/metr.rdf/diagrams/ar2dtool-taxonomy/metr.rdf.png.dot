@@ -1,0 +1,15 @@
+digraph ar2dtool_diagram { 
+rankdir=LR;
+size="1000"
+node [shape = rectangle, color="black"]; "https://isotc204.org/25965/metr/TrafficRegulation" "https://isotc204.org/25965/metr/METRThings" "https://isotc204.org/25965/metr/METRCatalogue" "https://isotc204.org/25965/metr/DefinedArea" "http://www.opengis.net/ont/geosparql#SpatialObjectCollection" "http://www.opengis.net/ont/geosparql#SpatialObject" "http://www.opengis.net/ont/geosparql#GeometryCollection" "http://www.opengis.net/ont/geosparql#Geometry" "http://www.opengis.net/ont/geosparql#FeatureCollection" "http://www.opengis.net/ont/geosparql#Feature" "skos:OrderedCollection" "skos:Collection" ; /*classes style*/
+	"http://www.opengis.net/ont/geosparql#Feature" -> "http://www.opengis.net/ont/geosparql#SpatialObject" [ label = "rdfs:subClassOf" ];
+	"https://isotc204.org/25965/metr/TrafficRegulation" -> "https://isotc204.org/25965/metr/METRThings" [ label = "rdfs:subClassOf" ];
+	"https://isotc204.org/25965/metr/DefinedArea" -> "https://isotc204.org/25965/metr/METRThings" [ label = "rdfs:subClassOf" ];
+	"https://isotc204.org/25965/metr/METRCatalogue" -> "https://isotc204.org/25965/metr/METRThings" [ label = "rdfs:subClassOf" ];
+	"http://www.opengis.net/ont/geosparql#FeatureCollection" -> "http://www.opengis.net/ont/geosparql#SpatialObjectCollection" [ label = "rdfs:subClassOf" ];
+	"skos:OrderedCollection" -> "skos:Collection" [ label = "rdfs:subClassOf" ];
+	"http://www.opengis.net/ont/geosparql#SpatialObjectCollection" -> "rdfs:Container" [ label = "rdfs:subClassOf" ];
+	"http://www.opengis.net/ont/geosparql#Geometry" -> "http://www.opengis.net/ont/geosparql#SpatialObject" [ label = "rdfs:subClassOf" ];
+	"http://www.opengis.net/ont/geosparql#GeometryCollection" -> "http://www.opengis.net/ont/geosparql#SpatialObjectCollection" [ label = "rdfs:subClassOf" ];
+
+}
