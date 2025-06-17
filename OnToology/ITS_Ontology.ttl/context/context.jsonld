@@ -7,15 +7,35 @@
     "Road" : {
       "@id" : "http://example.org/its#Road"
     },
+    "width" : {
+      "@id" : "http://example.org/its#width",
+      "@type" : "http://www.w3.org/2001/XMLSchema#int"
+    },
+    "TravelledWayLane" : {
+      "@id" : "http://example.org/its#TravelledWayLane"
+    },
+    "TravelCorridorSegment" : {
+      "@id" : "http://example.org/its#TravelCorridorSegment"
+    },
     "label" : {
       "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
     },
     "Location" : {
       "@id" : "http://example.org/its#Location"
     },
+    "TravelledWaySegment" : {
+      "@id" : "http://example.org/its#TravelledWaySegment"
+    },
+    "hasProperPart" : {
+      "@id" : "http://example.org/its#hasProperPart",
+      "@type" : "@id"
+    },
     "hasStatus" : {
       "@id" : "http://example.org/its#hasStatus",
       "@type" : "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "NetworkElement" : {
+      "@id" : "http://example.org/its#NetworkElement"
     },
     "TrafficSignal" : {
       "@id" : "http://example.org/its#TrafficSignal"
@@ -33,6 +53,9 @@
     "controlsTraffic" : {
       "@id" : "http://example.org/its#controlsTraffic",
       "@type" : "@id"
+    },
+    "TransportNetwork" : {
+      "@id" : "http://example.org/its#TransportNetwork"
     },
     "Sensor" : {
       "@id" : "http://example.org/its#Sensor"

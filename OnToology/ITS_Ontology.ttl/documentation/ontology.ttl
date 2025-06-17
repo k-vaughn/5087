@@ -1,13 +1,13 @@
-@prefix : <http://example.org/its#ITS_Ontology> .
+@prefix : <https://standards.iso.org/iso-iec/5087/-3/ed-1/en/ontology/transportnetwork#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://example.org/its#ITS_Ontology> .
+@base <https://standards.iso.org/iso-iec/5087/-3/ed-1/en/ontology/transportnetwork#> .
 
-<http://example.org/its#ITS_Ontology> rdf:type owl:Ontology ;
-                                       rdfs:comment "Ontology for Intelligent Transport Systems" .
+<https://standards.iso.org/iso-iec/5087/-3/ed-1/en/ontology/transportnetwork#> rdf:type owl:Ontology ;
+                                                                                rdfs:comment "Ontology for transport information for use by other city services" .
 
 #################################################################
 #    Object Properties
@@ -30,6 +30,12 @@
                                      rdfs:label "has location" .
 
 
+###  http://example.org/its#hasProperPart
+<http://example.org/its#hasProperPart> rdf:type owl:ObjectProperty ;
+                                       rdfs:domain <http://example.org/its#TravelledWaySegment> ;
+                                       rdfs:range <http://example.org/its#TravelledWayLane> .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -48,12 +54,22 @@
                                    rdfs:label "has status" .
 
 
+###  http://example.org/its#width
+<http://example.org/its#width> rdf:type owl:DatatypeProperty ;
+                               rdfs:domain <http://example.org/its#TravelledWayLane> ;
+                               rdfs:range xsd:int .
+
+
 #################################################################
 #    Classes
 #################################################################
 
 ###  http://example.org/its#Location
 <http://example.org/its#Location> rdf:type owl:Class .
+
+
+###  http://example.org/its#NetworkElement
+<http://example.org/its#NetworkElement> rdf:type owl:Class .
 
 
 ###  http://example.org/its#Road
@@ -72,6 +88,26 @@
 <http://example.org/its#TrafficSignal> rdf:type owl:Class ;
                                        rdfs:comment "A device controlling traffic flow" ;
                                        rdfs:label "Traffic Signal" .
+
+
+###  http://example.org/its#TransportNetwork
+<http://example.org/its#TransportNetwork> rdf:type owl:Class .
+
+
+###  http://example.org/its#TravelCorridorSegment
+<http://example.org/its#TravelCorridorSegment> rdf:type owl:Class ;
+                                               rdfs:comment "A TravelledWaySegment that logically groups multiple TravelledWaySegments together as being co-located or side-by-side" .
+
+
+###  http://example.org/its#TravelledWayLane
+<http://example.org/its#TravelledWayLane> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://example.org/its#NetworkElement> .
+
+
+###  http://example.org/its#TravelledWaySegment
+<http://example.org/its#TravelledWaySegment> rdf:type owl:Class ;
+                                             rdfs:subClassOf <http://example.org/its#NetworkElement> ;
+                                             rdfs:comment "NetworkElement that represents a contiguous length of a TravelledWayLink characterized by the same physical characteristics." .
 
 
 ###  http://example.org/its#Vehicle

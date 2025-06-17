@@ -1,5 +1,8 @@
 digraph ar2dtool_diagram { 
 rankdir=LR;
 size="1000"
+node [shape = rectangle, color="black"]; "base:NetworkElement" "base:TravelledWaySegment" "base:TravelledWayLane" ; /*classes style*/
+	"base:TravelledWaySegment" -> "base:NetworkElement" [ label = "rdfs:subClassOf" ];
+	"base:TravelledWayLane" -> "base:NetworkElement" [ label = "rdfs:subClassOf" ];
 
 }
