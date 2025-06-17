@@ -1,0 +1,45 @@
+@prefix class-scheme: <https://isotc204.org/25965/class-scheme#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Ontology Declaration
+<http://isotc204.org/25965/class-scheme> a owl:Ontology ;
+    dct:title "Class Scheme Ontology"@en ;
+    dct:description "An ontology for catalogs described by classification schemes"@en ;
+    owl:versionInfo "1.0"@en .
+
+# Class: ClassificationScheme (Superclass for flexibility)
+class-scheme:ClassificationScheme a owl:Class ;
+    rdfs:label "Classification Scheme"@en ;
+    rdfs:comment "A scheme for categorizing entities, such as traffic regulations. Subclasses include skos:ConceptScheme."@en .
+
+# Subclass: skos:ConceptScheme is a type of ClassificationScheme
+skos:ConceptScheme rdfs:subClassOf class-scheme:ClassificationScheme .
+
+# Property: describedByScheme
+class-scheme:describedByScheme a owl:ObjectProperty ;
+    rdfs:label "described by scheme"@en ;
+    rdfs:comment "Links a catalogue to the classification scheme that categorizes its concepts."@en ;
+    rdfs:range class-scheme:ClassificationScheme .
+
+class-scheme:ClassificationScheme rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty skos:prefLabel ;
+    owl:someValuesFrom rdfs:Literal
+] .
+
+class-scheme:ClassificationScheme rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty dct:creator ;
+    owl:someValuesFrom rdfs:Resource
+] .
+
+class-scheme:ClassificationScheme rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty owl:versionInfo ;
+    owl:someValuesFrom rdfs:Literal
+] .
