@@ -1,0 +1,374 @@
+[ {
+  "@id" : "_:genid1",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/1/SpatialLoc/hasLocation"
+  } ]
+}, {
+  "@id" : "_:genid10",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RailLineSegment"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasProperPart"
+  } ]
+}, {
+  "@id" : "_:genid11",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasName"
+  } ]
+}, {
+  "@id" : "_:genid12",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/1/SpatialLoc/hasLocation"
+  } ]
+}, {
+  "@id" : "_:genid13",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/1/SpatialLoc/hasLocation"
+  } ]
+}, {
+  "@id" : "_:genid14",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RoadSegment"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasProperPart"
+  } ]
+}, {
+  "@id" : "_:genid15",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasName"
+  } ]
+}, {
+  "@id" : "_:genid16",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/1/SpatialLoc/hasLocation"
+  } ]
+}, {
+  "@id" : "_:genid17",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/1/SpatialLoc/hasLocation"
+  } ]
+}, {
+  "@id" : "_:genid18",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "_:genid19"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/contains"
+  } ]
+}, {
+  "@id" : "_:genid19",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RailLineSegment"
+    }, {
+      "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RoadSegment"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid2",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "_:genid3"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/contains"
+  } ]
+}, {
+  "@id" : "_:genid22",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TunnelSegment"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasProperPart"
+  } ]
+}, {
+  "@id" : "_:genid23",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasName"
+  } ]
+}, {
+  "@id" : "_:genid24",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/1/SpatialLoc/hasLocation"
+  } ]
+}, {
+  "@id" : "_:genid3",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2002/07/owl#unionOf" : [ {
+    "@list" : [ {
+      "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RailLineSegment"
+    }, {
+      "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RoadSegment"
+    } ]
+  } ]
+}, {
+  "@id" : "_:genid6",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/BridgeSegment"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasProperPart"
+  } ]
+}, {
+  "@id" : "_:genid7",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://www.w3.org/2001/XMLSchema#string"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasName"
+  } ]
+}, {
+  "@id" : "_:genid8",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/1/SpatialLoc/hasLocation"
+  } ]
+}, {
+  "@id" : "_:genid9",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Restriction" ],
+  "http://www.w3.org/2002/07/owl#allValuesFrom" : [ {
+    "@id" : "http://www.opengis.net/ont/geosparql#Feature"
+  } ],
+  "http://www.w3.org/2002/07/owl#onProperty" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/1/SpatialLoc/hasLocation"
+  } ]
+}, {
+  "@id" : "http://creativecommons.org/ns#license",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/Bridge",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement"
+  }, {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing"
+  }, {
+    "@id" : "_:genid1"
+  }, {
+    "@id" : "_:genid2"
+  }, {
+    "@id" : "_:genid6"
+  }, {
+    "@id" : "_:genid7"
+  } ]
+}, {
+  "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/BridgeSegment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement"
+  }, {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing"
+  }, {
+    "@id" : "_:genid8"
+  } ]
+}, {
+  "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RailLine",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement"
+  }, {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing"
+  }, {
+    "@id" : "_:genid9"
+  }, {
+    "@id" : "_:genid10"
+  }, {
+    "@id" : "_:genid11"
+  } ]
+}, {
+  "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RailLineSegment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement"
+  }, {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing"
+  }, {
+    "@id" : "_:genid12"
+  } ]
+}, {
+  "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/Road",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement"
+  }, {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing"
+  }, {
+    "@id" : "_:genid13"
+  }, {
+    "@id" : "_:genid14"
+  }, {
+    "@id" : "_:genid15"
+  } ]
+}, {
+  "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RoadSegment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement"
+  }, {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing"
+  }, {
+    "@id" : "_:genid16"
+  } ]
+}, {
+  "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ]
+}, {
+  "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/Tunnel",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement"
+  }, {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing"
+  }, {
+    "@id" : "_:genid17"
+  }, {
+    "@id" : "_:genid18"
+  }, {
+    "@id" : "_:genid22"
+  }, {
+    "@id" : "_:genid23"
+  } ]
+}, {
+  "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TunnelSegment",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Class" ],
+  "http://www.w3.org/2000/01/rdf-schema#subClassOf" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement"
+  }, {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing"
+  }, {
+    "@id" : "_:genid24"
+  } ]
+}, {
+  "@id" : "http://ontology.eil.utoronto.ca/5087/TransportationInfrastructure",
+  "@type" : [ "http://www.w3.org/2002/07/owl#Ontology" ],
+  "http://purl.org/dc/elements/1.1/description" : [ {
+    "@value" : "The Transportation Infrastructure pattern defines the concepts that are relevant in describing the physical transportation infrastructure and their characteristics. This includes the concepts of a Road, Bridge, and Tunnel. The Infrastructure Pattern is reused here, as these transportation structures are all defined as types of (subclasses) Infrastructure Elements."
+  } ],
+  "http://purl.org/dc/elements/1.1/issued" : [ {
+    "@value" : "May 3, 2021"
+  } ],
+  "http://purl.org/dc/elements/1.1/title" : [ {
+    "@value" : "Transportation Infrastructure Pattern"
+  } ],
+  "http://www.w3.org/2002/07/owl#imports" : [ {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/1/GenericProperties.owl"
+  }, {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/1/Mereology.owl"
+  }, {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/1/SpatialLoc.owl"
+  }, {
+    "@id" : "http://ontology.eil.utoronto.ca/5087/2/Infrastructure.owl"
+  } ],
+  "http://www.w3.org/2002/07/owl#versionInfo" : [ {
+    "@type" : "http://www.w3.org/2001/XMLSchema#decimal",
+    "@value" : "1.0"
+  } ],
+  "http://www.w3.org/ns/adms#relatedDocumentation" : [ {
+    "@value" : "Under development. Refer to latest draft of ISO 5087-2."
+  } ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/date",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/issued",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/elements/1.1/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/creator",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/description",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/issued",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/modified",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/rights",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/dc/terms/title",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/2002/07/owl#versionInfo",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://www.w3.org/ns/adms#relatedDocumentation",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "http://xmlns.com/foaf/0.1/based_near",
+  "@type" : [ "http://www.w3.org/2002/07/owl#AnnotationProperty" ]
+}, {
+  "@id" : "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasName",
+  "@type" : [ "http://www.w3.org/2002/07/owl#DatatypeProperty" ]
+}, {
+  "@id" : "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/contains",
+  "@type" : [ "http://www.w3.org/2002/07/owl#ObjectProperty" ]
+} ]

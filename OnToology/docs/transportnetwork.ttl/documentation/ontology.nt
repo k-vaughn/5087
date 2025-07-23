@@ -1,0 +1,302 @@
+<https://isotc204.org/25965/transport/transportnetwork#> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://isotc204.org/25965/transport/transportnetwork#> <http://www.w3.org/2002/07/owl#imports> <https://isotc204.org/25965/transport/transportnetwork> .
+<https://isotc204.org/25965/transport/transportnetwork#> <http://www.w3.org/2002/07/owl#imports> <https://isotc204.org/25965/transport/travelcorridor> .
+<https://isotc204.org/25965/transport/transportnetwork#> <http://www.w3.org/2002/07/owl#imports> <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code> .
+<https://isotc204.org/25965/transport/transportnetwork#> <http://www.w3.org/2002/07/owl#imports> <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras> .
+<https://isotc204.org/25965/transport/transportnetwork#> <http://www.w3.org/2002/07/owl#imports> <https://www.opengis.net/ont/geosparql> .
+<https://isotc204.org/25965/transport/transportnetwork#> <http://www.w3.org/2002/07/owl#imports> <https://www.w3.org/2006/time> .
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://isotc204.org/25965/transport/transportnetwork#allowedDirections
+<https://isotc204.org/25965/transport/transportnetwork#allowedDirections> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://isotc204.org/25965/transport/transportnetwork#code
+<https://isotc204.org/25965/transport/transportnetwork#code> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://isotc204.org/25965/transport/transportnetwork#egress
+<https://isotc204.org/25965/transport/transportnetwork#egress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://isotc204.org/25965/transport/transportnetwork#from
+<https://isotc204.org/25965/transport/transportnetwork#from> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://isotc204.org/25965/transport/transportnetwork#ingress
+<https://isotc204.org/25965/transport/transportnetwork#ingress> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://isotc204.org/25965/transport/transportnetwork#status
+<https://isotc204.org/25965/transport/transportnetwork#status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://isotc204.org/25965/transport/transportnetwork#timeInterval
+<https://isotc204.org/25965/transport/transportnetwork#timeInterval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://isotc204.org/25965/transport/transportnetwork#to
+<https://isotc204.org/25965/transport/transportnetwork#to> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://isotc204.org/25965/transport/transportnetwork#travelCorridorSegment
+<https://isotc204.org/25965/transport/transportnetwork#travelCorridorSegment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://isotc204.org/25965/transport/transportnetwork#designator
+<https://isotc204.org/25965/transport/transportnetwork#designator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://isotc204.org/25965/transport/transportnetwork#designator> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties#hasIdentifier
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties#hasIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties#hasIdentifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://isotc204.org/25965/transport/transportnetwork#ITSThing
+<https://isotc204.org/25965/transport/transportnetwork#ITSThing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://isotc204.org/25965/transport/transportnetwork#Junction
+<https://isotc204.org/25965/transport/transportnetwork#Junction> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/transport/transportnetwork#Junction> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/transport/transportnetwork#TransportNode> .
+# 
+# https://isotc204.org/25965/transport/transportnetwork#NetworkElement
+<https://isotc204.org/25965/transport/transportnetwork#NetworkElement> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/transport/transportnetwork#NetworkElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/transport/transportnetwork#ITSThing> .
+<https://isotc204.org/25965/transport/transportnetwork#NetworkElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://www.opengis.net/ont/geosparql#Feature> .
+<https://www.opengis.net/ont/geosparql#Feature> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/transport/transportnetwork#NetworkElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://isotc204.org/25965/transport/transportnetwork#Status> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/transport/transportnetwork#status> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#NetworkElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://isotc204.org/25965/transport/transportnetwork#NetworkElement> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#NetworkElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://isotc204.org/25965/transport/transportnetwork#NetworkElement> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#NetworkElement> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid4 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties#hasIdentifier> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://isotc204.org/25965/transport/transportnetwork#Status
+<https://isotc204.org/25965/transport/transportnetwork#Status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://isotc204.org/25965/transport/transportnetwork#TransportNetwork
+<https://isotc204.org/25965/transport/transportnetwork#TransportNetwork> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/transport/transportnetwork#TransportNetwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/transport/transportnetwork#NetworkElement> .
+<https://isotc204.org/25965/transport/transportnetwork#TransportNetwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://isotc204.org/25965/transport/transportnetwork#TransportNetwork> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TransportNetwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://isotc204.org/25965/transport/transportnetwork#TransportNode> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TransportNetwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://isotc204.org/25965/transport/transportnetwork#TravelledWay> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TransportNetwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TransportNetwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://isotc204.org/25965/transport/transportnetwork#TravelledWaySection> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TransportNetwork> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://isotc204.org/25965/transport/transportnetwork#TransportNetwork> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://isotc204.org/25965/transport/transportnetwork#TransportNode
+<https://isotc204.org/25965/transport/transportnetwork#TransportNode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/transport/transportnetwork#TransportNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/transport/transportnetwork#NetworkElement> .
+<https://isotc204.org/25965/transport/transportnetwork#TransportNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink> .
+_:genid11 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/transport/transportnetwork#egress> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TransportNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink> .
+_:genid12 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/transport/transportnetwork#ingress> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TransportNode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/transport/transportnetwork#TransportNetwork> .
+_:genid13 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://isotc204.org/25965/transport/transportnetwork#TravelledWay
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWay> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWay> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/transport/transportnetwork#NetworkElement> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWay> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWay> .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWay> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWay> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWay> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/transport/transportnetwork#TransportNetwork> .
+_:genid15 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWay> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid16 .
+_:genid16 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid16 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid16 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/transport/transportnetwork#designator> .
+_:genid16 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://isotc204.org/25965/transport/transportnetwork#TravelledWayLane
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWayLane> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWayLane> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/transport/transportnetwork#NetworkElement> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWayLane> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid17 .
+_:genid17 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/transport/transportnetwork#TravelledWaySegment> .
+_:genid17 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid17 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> .
+_:genid17 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/transport/transportnetwork#NetworkElement> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWayLink> .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWayLink> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid18 .
+_:genid18 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://isotc204.org/25965/transport/transportnetwork#TravelledWaySegment> .
+_:genid18 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> .
+_:genid18 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid19 .
+_:genid19 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://isotc204.org/25965/transport/transportnetwork#TravelledWay> .
+_:genid19 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> .
+_:genid19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid20 .
+_:genid20 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://isotc204.org/25965/transport/transportnetwork#TravelledWaySection> .
+_:genid20 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> .
+_:genid20 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid21 .
+_:genid21 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/transport/transportnetwork#TransportNetwork> .
+_:genid21 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid21 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> .
+_:genid21 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid22 .
+_:genid22 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/transport/transportnetwork#TransportNode> .
+_:genid22 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid22 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/transport/transportnetwork#from> .
+_:genid22 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid23 .
+_:genid23 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/transport/transportnetwork#TransportNode> .
+_:genid23 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid23 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/transport/transportnetwork#to> .
+_:genid23 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid24 .
+_:genid24 <http://www.w3.org/2002/07/owl#onClass> <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code#Code> .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code#Code> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid24 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid24 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/transport/transportnetwork#allowedDirections> .
+_:genid24 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://isotc204.org/25965/transport/transportnetwork#TravelledWaySection
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWaySection> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWaySection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/transport/transportnetwork#NetworkElement> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWaySection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid25 .
+_:genid25 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink> .
+_:genid25 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> .
+_:genid25 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWaySection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid26 .
+_:genid26 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://isotc204.org/25965/transport/transportnetwork#TravelledWaySegment> .
+_:genid26 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> .
+_:genid26 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWaySection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid27 .
+_:genid27 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/transport/transportnetwork#TransportNetwork> .
+_:genid27 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid27 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> .
+_:genid27 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://isotc204.org/25965/transport/transportnetwork#TravelledWaySegment
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWaySegment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWaySegment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/transport/transportnetwork#NetworkElement> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWaySegment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWaySegment> .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWaySegment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWaySegment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid28 .
+_:genid28 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://isotc204.org/25965/transport/travelcorridor#TravelCorridorSegment> .
+<https://isotc204.org/25965/transport/travelcorridor#TravelCorridorSegment> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:genid28 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/transport/transportnetwork#travelCorridorSegment> .
+_:genid28 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWaySegment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid29 .
+_:genid29 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://isotc204.org/25965/transport/transportnetwork#TravelledWaySection> .
+_:genid29 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> .
+_:genid29 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWaySegment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid30 .
+_:genid30 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/transport/transportnetwork#TravelledWayLane> .
+_:genid30 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid30 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> .
+_:genid30 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#TravelledWaySegment> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid31 .
+_:genid31 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink> .
+_:genid31 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid31 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> .
+_:genid31 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://isotc204.org/25965/transport/travelcorridor#TravelCorridorSegment
+# 
+# https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code#Code
+# 
+# https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWay
+# 
+# https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWayLink
+# 
+# https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWaySegment
+# 
+# https://www.opengis.net/ont/geosparql#Feature
+# 
+# https://www.w3.org/2006/time#DateTimeInterval
+<https://www.w3.org/2006/time#DateTimeInterval> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://isotc204.org/25965/transport/transportnetwork#Status
+<https://isotc204.org/25965/transport/transportnetwork#Status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://isotc204.org/25965/transport/transportnetwork#Status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> _:genid32 .
+_:genid32 <http://www.w3.org/2002/07/owl#allValuesFrom> <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code#Code> .
+_:genid32 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/transport/transportnetwork#code> .
+_:genid32 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/transport/transportnetwork#Status> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> _:genid33 .
+_:genid33 <http://www.w3.org/2002/07/owl#onClass> <https://www.w3.org/2006/time#DateTimeInterval> .
+_:genid33 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid33 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/transport/transportnetwork#timeInterval> .
+_:genid33 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

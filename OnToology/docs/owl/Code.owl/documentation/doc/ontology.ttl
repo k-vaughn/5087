@@ -1,0 +1,161 @@
+@prefix : <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/> .
+
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/> rdf:type owl:Ontology ;
+                                                                    owl:imports <http://ontology.eil.utoronto.ca/5087/1/GenericProperties.owl> ,
+                                                                                <http://ontology.eil.utoronto.ca/5087/1/OrganizationStructure.owl> ;
+                                                                    <http://purl.org/dc/elements/1.1/description> """The Code Pattern provides a structure to address the challenge of value enumeration with a general approach. In city data there are many classes of things that are intended to be instantiated using a set list of values (e.g., classification systems), however these values may change based on application or context. 
+The Code Pattern introduces a generic set of classes and properties that can be used to extend such classes to define various classification systems in an integrated way.
+Instead of enumerating value sets for classes, values can be defined with an associated Code that specifies additional metadata about the value and its origins.""" ;
+                                                                    <http://purl.org/dc/elements/1.1/title> "Code Pattern" ;
+                                                                    <http://www.w3.org/ns/adms#relatedDocumentation> "Under development. Refer to latest draft of ISO 5087-2." .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://creativecommons.org/ns#license
+<http://creativecommons.org/ns#license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/issued
+<http://purl.org/dc/elements/1.1/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+<http://purl.org/dc/terms/rights> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/adms#relatedDocumentation
+<http://www.w3.org/ns/adms#relatedDocumentation> rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/based_near
+<http://xmlns.com/foaf/0.1/based_near> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/codeOntologyObjectProperty
+:codeOntologyObjectProperty rdf:type owl:ObjectProperty .
+
+
+###  https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/definedBy
+:definedBy rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :codeOntologyObjectProperty .
+
+
+###  https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/hasCode
+:hasCode rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :codeOntologyObjectProperty ;
+         rdfs:range :Code .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasIdentifier
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasIdentifier> rdf:type owl:DatatypeProperty .
+
+
+###  https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/codeOntologyDataProperty
+:codeOntologyDataProperty rdf:type owl:DatatypeProperty .
+
+
+###  https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/specification
+:specification rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf :codeOntologyDataProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/OrganizationStructure/Organization
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/OrganizationStructure/Organization> rdf:type owl:Class .
+
+
+###  https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code
+:Code rdf:type owl:Class ;
+      rdfs:subClassOf :CodeOntologyThing ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :definedBy ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/OrganizationStructure/Organization>
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasDescription> ;
+                        owl:allValuesFrom xsd:string
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasName> ;
+                        owl:allValuesFrom xsd:string
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasIdentifier> ;
+                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:string
+                      ] .
+
+
+###  https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/CodeOntologyThing
+:CodeOntologyThing rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

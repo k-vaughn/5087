@@ -1,0 +1,259 @@
+<https://isotc204.org/25965/metr/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://isotc204.org/25965/metr/> <http://www.w3.org/2002/07/owl#imports> <http://isotc204.org/25965/class-scheme> .
+<https://isotc204.org/25965/metr/> <http://www.w3.org/2002/07/owl#imports> <http://www.opengis.net/ont/geosparql/1.1> .
+<https://isotc204.org/25965/metr/> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2004/02/skos/core> .
+<https://isotc204.org/25965/metr/> <http://www.w3.org/2002/07/owl#imports> <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/> .
+<https://isotc204.org/25965/metr/> <http://www.w3.org/2000/01/rdf-schema#comment> "Ontology for the management of electronic traffic regulations"@en .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://www.w3.org/2000/01/rdf-schema#definition
+<http://www.w3.org/2000/01/rdf-schema#definition> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://isotc204.org/25965/identifier
+<https://isotc204.org/25965/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://isotc204.org/25965/metr/METRObjectProperty
+<https://isotc204.org/25965/metr/METRObjectProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://isotc204.org/25965/metr/categoryScheme
+<https://isotc204.org/25965/metr/categoryScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://isotc204.org/25965/metr/categoryScheme> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://isotc204.org/25965/metr/METRObjectProperty> .
+<https://isotc204.org/25965/metr/categoryScheme> <http://www.w3.org/2000/01/rdf-schema#range> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+_:genid1 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/metr/coveredArea> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://isotc204.org/25965/metr/coveredArea
+<https://isotc204.org/25965/metr/coveredArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://isotc204.org/25965/metr/coveredArea> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://isotc204.org/25965/metr/METRObjectProperty> .
+<https://isotc204.org/25965/metr/coveredArea> <http://www.w3.org/2000/01/rdf-schema#range> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/DefinedArea> .
+_:genid2 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/metr/coveredArea> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://isotc204.org/25965/metr/levelOfSupport
+<https://isotc204.org/25965/metr/levelOfSupport> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://isotc204.org/25965/metr/levelOfSupport> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://isotc204.org/25965/metr/METRObjectProperty> .
+<https://isotc204.org/25965/metr/levelOfSupport> <http://www.w3.org/2000/01/rdf-schema#range> <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code> .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://isotc204.org/25965/metr/ruleCategory
+<https://isotc204.org/25965/metr/ruleCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://isotc204.org/25965/metr/ruleCategory> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://isotc204.org/25965/metr/METRObjectProperty> .
+# 
+# https://isotc204.org/25965/metr/ruleCategoryScheme
+<https://isotc204.org/25965/metr/ruleCategoryScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://isotc204.org/25965/metr/ruleCategoryScheme> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://isotc204.org/25965/metr/METRObjectProperty> .
+# 
+# https://isotc204.org/25965/metr/supportedRuleSet
+<https://isotc204.org/25965/metr/supportedRuleSet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://isotc204.org/25965/metr/supportedRuleSet> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://isotc204.org/25965/metr/METRObjectProperty> .
+# 
+# https://isotc204.org/25965/metr/vehicleCategory
+<https://isotc204.org/25965/metr/vehicleCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://isotc204.org/25965/metr/vehicleCategory> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://isotc204.org/25965/metr/METRObjectProperty> .
+# 
+# https://isotc204.org/25965/metr/vehicleCategoryScheme
+<https://isotc204.org/25965/metr/vehicleCategoryScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://isotc204.org/25965/metr/vehicleCategoryScheme> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://isotc204.org/25965/metr/METRObjectProperty> .
+<https://isotc204.org/25965/metr/vehicleCategoryScheme> <http://www.w3.org/2000/01/rdf-schema#domain> <https://isotc204.org/25965/METRCatalogue> .
+<https://isotc204.org/25965/metr/vehicleCategoryScheme> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://isotc204.org/25965/identifier
+<https://isotc204.org/25965/identifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://isotc204.org/25965/identifier> <http://www.w3.org/2000/01/rdf-schema#range> <http://www.w3.org/2001/XMLSchema#string> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://isotc204.org/25965/DefinedArea
+<https://isotc204.org/25965/DefinedArea> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/DefinedArea> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/METRThings> .
+<https://isotc204.org/25965/DefinedArea> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid3 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/identifier> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://isotc204.org/25965/METRCatalogue
+<https://isotc204.org/25965/METRCatalogue> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/METRCatalogue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/METRThings> .
+<https://isotc204.org/25965/METRCatalogue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/metr/SupportedRuleSet> .
+_:genid4 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/metr/supportedRuleSet> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/METRCatalogue> <http://www.w3.org/2000/01/rdf-schema#comment> "While it is desirable to have all implementations use a single scheme, the identifier allows graceful migration to alternative schemes as deemed necessary - hopefully as a temporary solution until enhancements are incorporated into the next evolution of the standard scheme."@en .
+<https://isotc204.org/25965/METRCatalogue> <http://www.w3.org/2000/01/rdf-schema#definition> "A container that holds traffic regulations for a defined area organized according to a defined classification scheme."@en .
+# 
+# https://isotc204.org/25965/METRThings
+<https://isotc204.org/25965/METRThings> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://isotc204.org/25965/TrafficRegulation
+<https://isotc204.org/25965/TrafficRegulation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/TrafficRegulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/METRThings> .
+<https://isotc204.org/25965/TrafficRegulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid5 .
+_:genid5 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/metr/RuleCategory> .
+_:genid5 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid5 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/metr/ruleCategory> .
+_:genid5 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/TrafficRegulation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid6 .
+_:genid6 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/metr/VehicleCategory> .
+_:genid6 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid6 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/metr/vehicleCategory> .
+_:genid6 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://isotc204.org/25965/metr/ConceptEntry
+<https://isotc204.org/25965/metr/ConceptEntry> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/metr/ConceptEntry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/METRThings> .
+<https://isotc204.org/25965/metr/ConceptEntry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid7 .
+_:genid7 <http://www.w3.org/2002/07/owl#onClass> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+_:genid7 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid7 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/metr/categoryScheme> .
+_:genid7 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/metr/ConceptEntry> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid8 .
+_:genid8 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid8 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid8 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/identifier> .
+_:genid8 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://isotc204.org/25965/metr/CyberLocation
+<https://isotc204.org/25965/metr/CyberLocation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/metr/CyberLocation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/METRThings> .
+# 
+# https://isotc204.org/25965/metr/LevelOfSupportCode
+<https://isotc204.org/25965/metr/LevelOfSupportCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/metr/LevelOfSupportCode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/METRThings> .
+<https://isotc204.org/25965/metr/LevelOfSupportCode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code> .
+# 
+# https://isotc204.org/25965/metr/RuleCatagoryScheme
+<https://isotc204.org/25965/metr/RuleCatagoryScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/metr/RuleCatagoryScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<https://isotc204.org/25965/metr/RuleCatagoryScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/METRThings> .
+<https://isotc204.org/25965/metr/RuleCatagoryScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid9 .
+_:genid9 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/metr/RuleCatagoryScheme> .
+_:genid9 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid9 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/metr/ruleCategoryScheme> .
+_:genid9 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://isotc204.org/25965/metr/RuleCategory
+<https://isotc204.org/25965/metr/RuleCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/metr/RuleCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/METRThings> .
+<https://isotc204.org/25965/metr/RuleCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/metr/ConceptEntry> .
+<https://isotc204.org/25965/metr/RuleCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid10 .
+_:genid10 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/metr/RuleCatagoryScheme> .
+_:genid10 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid10 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/metr/categoryScheme> .
+_:genid10 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://isotc204.org/25965/metr/SupportedRuleSet
+<https://isotc204.org/25965/metr/SupportedRuleSet> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/metr/SupportedRuleSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/METRThings> .
+<https://isotc204.org/25965/metr/SupportedRuleSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid11 .
+_:genid11 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/DefinedArea> .
+_:genid11 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid11 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/metr/coveredArea> .
+_:genid11 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/metr/SupportedRuleSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid12 .
+_:genid12 <http://www.w3.org/2002/07/owl#onClass> <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code> .
+_:genid12 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid12 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/metr/levelOfSupport> .
+_:genid12 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/metr/SupportedRuleSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid13 .
+_:genid13 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/metr/RuleCategory> .
+_:genid13 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid13 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/metr/ruleCategory> .
+_:genid13 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://isotc204.org/25965/metr/SupportedRuleSet> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid14 .
+_:genid14 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/metr/VehicleCategory> .
+_:genid14 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid14 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/metr/vehicleCategory> .
+_:genid14 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://isotc204.org/25965/metr/VehicleCategory
+<https://isotc204.org/25965/metr/VehicleCategory> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/metr/VehicleCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/METRThings> .
+<https://isotc204.org/25965/metr/VehicleCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/metr/ConceptEntry> .
+<https://isotc204.org/25965/metr/VehicleCategory> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid15 .
+_:genid15 <http://www.w3.org/2002/07/owl#onClass> <https://isotc204.org/25965/metr/VehicleCategoryScheme> .
+_:genid15 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid15 <http://www.w3.org/2002/07/owl#onProperty> <https://isotc204.org/25965/metr/vehicleCategoryScheme> .
+_:genid15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://isotc204.org/25965/metr/VehicleCategoryScheme
+<https://isotc204.org/25965/metr/VehicleCategoryScheme> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://isotc204.org/25965/metr/VehicleCategoryScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+<https://isotc204.org/25965/metr/VehicleCategoryScheme> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://isotc204.org/25965/METRThings> .
+# 
+# https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Individuals
+# #
+# #################################################################
+# 
+# 
+# https://isotc204.org/25965/metr/all
+<https://isotc204.org/25965/metr/all> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://isotc204.org/25965/metr/all> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://isotc204.org/25965/metr/LevelOfSupportCode> .
+# 
+# https://isotc204.org/25965/metr/most
+<https://isotc204.org/25965/metr/most> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://isotc204.org/25965/metr/most> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://isotc204.org/25965/metr/LevelOfSupportCode> .
+# 
+# https://isotc204.org/25965/metr/none
+<https://isotc204.org/25965/metr/none> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://isotc204.org/25965/metr/none> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://isotc204.org/25965/metr/LevelOfSupportCode> .
+# 
+# https://isotc204.org/25965/metr/some
+<https://isotc204.org/25965/metr/some> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#NamedIndividual> .
+<https://isotc204.org/25965/metr/some> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <https://isotc204.org/25965/metr/LevelOfSupportCode> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Annotations
+# #
+# #################################################################
+# 
+# 
+<https://isotc204.org/25965/identifier> <http://www.w3.org/2000/01/rdf-schema#comment> "A globally unique identifier, such as a GUID" .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

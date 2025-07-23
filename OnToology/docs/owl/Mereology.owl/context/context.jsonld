@@ -1,0 +1,67 @@
+{
+  "@context" : {
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "license" : {
+      "@id" : "http://creativecommons.org/ns#license"
+    },
+    "issued" : {
+      "@id" : "http://purl.org/dc/elements/1.1/issued"
+    },
+    "immediateComponentOf" : {
+      "@id" : "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/immediateComponentOf",
+      "@type" : "@id"
+    },
+    "based_near" : {
+      "@id" : "http://xmlns.com/foaf/0.1/based_near"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/elements/1.1/creator"
+    },
+    "hasProperPart" : {
+      "@id" : "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasProperPart",
+      "@type" : "@id"
+    },
+    "componentOf" : {
+      "@id" : "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/componentOf",
+      "@type" : "@id"
+    },
+    "rights" : {
+      "@id" : "http://purl.org/dc/terms/rights"
+    },
+    "preferredNamespacePrefix" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespacePrefix"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title"
+    },
+    "modified" : {
+      "@id" : "http://purl.org/dc/terms/modified"
+    },
+    "relatedDocumentation" : {
+      "@id" : "http://www.w3.org/ns/adms#relatedDocumentation"
+    },
+    "MereologyOntologyProperty" : {
+      "@id" : "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/MereologyOntologyProperty",
+      "@type" : "@id"
+    },
+    "date" : {
+      "@id" : "http://purl.org/dc/elements/1.1/date"
+    },
+    "hasComponent" : {
+      "@id" : "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasComponent",
+      "@type" : "@id"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description"
+    },
+    "preferredNamespaceUri" : {
+      "@id" : "http://purl.org/vocab/vann/preferredNamespaceUri"
+    },
+    "properPartOf" : {
+      "@id" : "https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/properPartOf",
+      "@type" : "@id"
+    }
+  }
+}

@@ -1,0 +1,104 @@
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/> <http://www.w3.org/2002/07/owl#imports> <http://ontology.eil.utoronto.ca/5087/1/GenericProperties.owl> .
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/> <http://creativecommons.org/ns#license> "http://creativecommons.org/licenses/by/3.0/" .
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/> <http://purl.org/dc/elements/1.1/creator> "Megan Katsumi" .
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/> <http://purl.org/dc/elements/1.1/description> "Ontology to capture concepts related to parthood.\nThe Mereology Ontology extends beyond classical mereology to cover parthood, but also component-hood and containment." .
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/> <http://purl.org/dc/elements/1.1/title> "Mereology Ontology" .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://creativecommons.org/ns#license
+<http://creativecommons.org/ns#license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/issued
+<http://purl.org/dc/elements/1.1/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/rights
+<http://purl.org/dc/terms/rights> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2002/07/owl#versionInfo
+<http://www.w3.org/2002/07/owl#versionInfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/adms#relatedDocumentation
+<http://www.w3.org/ns/adms#relatedDocumentation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/based_near
+<http://xmlns.com/foaf/0.1/based_near> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/MereologyOntologyProperty
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/MereologyOntologyProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/MereologyOntologyProperty> <http://purl.org/dc/elements/1.1/description> "Created for organizational purposes, to identify properties defined in the Mereology ontology." .
+# 
+# https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/componentOf
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/componentOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/componentOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/properPartOf> .
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/componentOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasComponent> .
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/componentOf> <http://purl.org/dc/elements/1.1/description> "Something may be a Component of some other thing\nMore specifically, something may be a immediate component of something; in other words, if x is an immediate component of y, then there does not exist any other object that is a component of y and has x as a component.\nComponent-of is transitive. Immediate component-of is not transitive.\nImmediate component-of is a subproperty of component-of." .
+# 
+# https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasComponent
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasComponent> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasComponent> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasProperPart> .
+# 
+# https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasProperPart
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasProperPart> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasProperPart> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/MereologyOntologyProperty> .
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasProperPart> <http://www.w3.org/2002/07/owl#inverseOf> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/properPartOf> .
+# 
+# https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/immediateComponentOf
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/immediateComponentOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/immediateComponentOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/componentOf> .
+# 
+# https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/properPartOf
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/properPartOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/properPartOf> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/MereologyOntologyProperty> .
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/properPartOf> <http://purl.org/dc/elements/1.1/description> "Something may be a Proper Part of some other thing.\nAn object cannot be a proper part of itself. Thus, any object must have more than one proper part.\nProper Parthood is transitive.\nProper parthood is dense and so there exist no immediate proper parts; in other words, given some object, whatever proper part, x, we choose, there exists some slightly larger proper part of the object that also has x as a proper part." .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

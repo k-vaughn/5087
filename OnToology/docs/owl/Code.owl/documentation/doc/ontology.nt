@@ -1,0 +1,144 @@
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/> <http://www.w3.org/2002/07/owl#imports> <http://ontology.eil.utoronto.ca/5087/1/GenericProperties.owl> .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/> <http://www.w3.org/2002/07/owl#imports> <http://ontology.eil.utoronto.ca/5087/1/OrganizationStructure.owl> .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/> <http://purl.org/dc/elements/1.1/description> "The Code Pattern provides a structure to address the challenge of value enumeration with a general approach. In city data there are many classes of things that are intended to be instantiated using a set list of values (e.g., classification systems), however these values may change based on application or context. \nThe Code Pattern introduces a generic set of classes and properties that can be used to extend such classes to define various classification systems in an integrated way.\nInstead of enumerating value sets for classes, values can be defined with an associated Code that specifies additional metadata about the value and its origins." .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/> <http://purl.org/dc/elements/1.1/title> "Code Pattern" .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/> <http://www.w3.org/ns/adms#relatedDocumentation> "Under development. Refer to latest draft of ISO 5087-2." .
+# 
+# 
+# #################################################################
+# #
+# #    Annotation properties
+# #
+# #################################################################
+# 
+# 
+# http://creativecommons.org/ns#license
+<http://creativecommons.org/ns#license> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/issued
+<http://purl.org/dc/elements/1.1/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/rights
+<http://purl.org/dc/terms/rights> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/2002/07/owl#versionInfo
+<http://www.w3.org/2002/07/owl#versionInfo> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://www.w3.org/ns/adms#relatedDocumentation
+<http://www.w3.org/ns/adms#relatedDocumentation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# http://xmlns.com/foaf/0.1/based_near
+<http://xmlns.com/foaf/0.1/based_near> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#AnnotationProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Object Properties
+# #
+# #################################################################
+# 
+# 
+# https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/codeOntologyObjectProperty
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/codeOntologyObjectProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+# 
+# https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/definedBy
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/definedBy> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/definedBy> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/codeOntologyObjectProperty> .
+# 
+# https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/hasCode
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/hasCode> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/hasCode> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/codeOntologyObjectProperty> .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/hasCode> <http://www.w3.org/2000/01/rdf-schema#range> <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Data properties
+# #
+# #################################################################
+# 
+# 
+# https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasIdentifier
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasIdentifier> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/codeOntologyDataProperty
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/codeOntologyDataProperty> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+# 
+# https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/specification
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/specification> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#DatatypeProperty> .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/specification> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/codeOntologyDataProperty> .
+# 
+# 
+# 
+# #################################################################
+# #
+# #    Classes
+# #
+# #################################################################
+# 
+# 
+# https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/OrganizationStructure/Organization
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/OrganizationStructure/Organization> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/CodeOntologyThing> .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid1 .
+_:genid1 <http://www.w3.org/2002/07/owl#onClass> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/OrganizationStructure/Organization> .
+_:genid1 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid1 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/definedBy> .
+_:genid1 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid2 .
+_:genid2 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid2 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasDescription> .
+_:genid2 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid3 .
+_:genid3 <http://www.w3.org/2002/07/owl#allValuesFrom> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid3 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasName> .
+_:genid3 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:genid4 .
+_:genid4 <http://www.w3.org/2002/07/owl#onDataRange> <http://www.w3.org/2001/XMLSchema#string> .
+_:genid4 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:genid4 <http://www.w3.org/2002/07/owl#onProperty> <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasIdentifier> .
+_:genid4 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+# 
+# https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/CodeOntologyThing
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/CodeOntologyThing> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+# 
+# Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
