@@ -1,0 +1,467 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://isotc204.org/25965/metr/"
+     xml:base="https://isotc204.org/25965/metr/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="https://schema.org/">
+    <owl:Ontology rdf:about="https://isotc204.org/25965/metr/">
+        <owl:imports rdf:resource="http://isotc204.org/25965/class-scheme"/>
+        <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql/1.1"/>
+        <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <owl:imports rdf:resource="https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/"/>
+        <rdfs:comment xml:lang="en">Ontology for the management of electronic traffic regulations</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#definition -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#definition"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://isotc204.org/25965/identifier -->
+
+
+    <owl:ObjectProperty rdf:about="https://isotc204.org/25965/identifier"/>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/METRObjectProperty -->
+
+
+    <owl:ObjectProperty rdf:about="https://isotc204.org/25965/metr/METRObjectProperty"/>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/categoryScheme -->
+
+
+    <owl:ObjectProperty rdf:about="https://isotc204.org/25965/metr/categoryScheme">
+        <rdfs:subPropertyOf rdf:resource="https://isotc204.org/25965/metr/METRObjectProperty"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://isotc204.org/25965/metr/coveredArea"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/coveredArea -->
+
+
+    <owl:ObjectProperty rdf:about="https://isotc204.org/25965/metr/coveredArea">
+        <rdfs:subPropertyOf rdf:resource="https://isotc204.org/25965/metr/METRObjectProperty"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://isotc204.org/25965/metr/coveredArea"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://isotc204.org/25965/DefinedArea"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/levelOfSupport -->
+
+
+    <owl:ObjectProperty rdf:about="https://isotc204.org/25965/metr/levelOfSupport">
+        <rdfs:subPropertyOf rdf:resource="https://isotc204.org/25965/metr/METRObjectProperty"/>
+        <rdfs:range rdf:resource="https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/ruleCategory -->
+
+
+    <owl:ObjectProperty rdf:about="https://isotc204.org/25965/metr/ruleCategory">
+        <rdfs:subPropertyOf rdf:resource="https://isotc204.org/25965/metr/METRObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/ruleCategoryScheme -->
+
+
+    <owl:ObjectProperty rdf:about="https://isotc204.org/25965/metr/ruleCategoryScheme">
+        <rdfs:subPropertyOf rdf:resource="https://isotc204.org/25965/metr/METRObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/supportedRuleSet -->
+
+
+    <owl:ObjectProperty rdf:about="https://isotc204.org/25965/metr/supportedRuleSet">
+        <rdfs:subPropertyOf rdf:resource="https://isotc204.org/25965/metr/METRObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/vehicleCategory -->
+
+
+    <owl:ObjectProperty rdf:about="https://isotc204.org/25965/metr/vehicleCategory">
+        <rdfs:subPropertyOf rdf:resource="https://isotc204.org/25965/metr/METRObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/vehicleCategoryScheme -->
+
+
+    <owl:ObjectProperty rdf:about="https://isotc204.org/25965/metr/vehicleCategoryScheme">
+        <rdfs:subPropertyOf rdf:resource="https://isotc204.org/25965/metr/METRObjectProperty"/>
+        <rdfs:domain rdf:resource="https://isotc204.org/25965/METRCatalogue"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://isotc204.org/25965/identifier -->
+
+
+    <owl:DatatypeProperty rdf:about="https://isotc204.org/25965/identifier">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://isotc204.org/25965/DefinedArea -->
+
+
+    <owl:Class rdf:about="https://isotc204.org/25965/DefinedArea">
+        <rdfs:subClassOf rdf:resource="https://isotc204.org/25965/METRThings"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://isotc204.org/25965/identifier"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://isotc204.org/25965/METRCatalogue -->
+
+
+    <owl:Class rdf:about="https://isotc204.org/25965/METRCatalogue">
+        <rdfs:subClassOf rdf:resource="https://isotc204.org/25965/METRThings"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://isotc204.org/25965/metr/supportedRuleSet"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://isotc204.org/25965/metr/SupportedRuleSet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">While it is desirable to have all implementations use a single scheme, the identifier allows graceful migration to alternative schemes as deemed necessary - hopefully as a temporary solution until enhancements are incorporated into the next evolution of the standard scheme.</rdfs:comment>
+        <rdfs:definition xml:lang="en">A container that holds traffic regulations for a defined area organized according to a defined classification scheme.</rdfs:definition>
+    </owl:Class>
+    
+
+
+    <!-- https://isotc204.org/25965/METRThings -->
+
+
+    <owl:Class rdf:about="https://isotc204.org/25965/METRThings"/>
+    
+
+
+    <!-- https://isotc204.org/25965/TrafficRegulation -->
+
+
+    <owl:Class rdf:about="https://isotc204.org/25965/TrafficRegulation">
+        <rdfs:subClassOf rdf:resource="https://isotc204.org/25965/METRThings"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://isotc204.org/25965/metr/ruleCategory"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://isotc204.org/25965/metr/RuleCategory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://isotc204.org/25965/metr/vehicleCategory"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://isotc204.org/25965/metr/VehicleCategory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/ConceptEntry -->
+
+
+    <owl:Class rdf:about="https://isotc204.org/25965/metr/ConceptEntry">
+        <rdfs:subClassOf rdf:resource="https://isotc204.org/25965/METRThings"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://isotc204.org/25965/metr/categoryScheme"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://isotc204.org/25965/identifier"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/CyberLocation -->
+
+
+    <owl:Class rdf:about="https://isotc204.org/25965/metr/CyberLocation">
+        <rdfs:subClassOf rdf:resource="https://isotc204.org/25965/METRThings"/>
+    </owl:Class>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/LevelOfSupportCode -->
+
+
+    <owl:Class rdf:about="https://isotc204.org/25965/metr/LevelOfSupportCode">
+        <rdfs:subClassOf rdf:resource="https://isotc204.org/25965/METRThings"/>
+        <rdfs:subClassOf rdf:resource="https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code"/>
+    </owl:Class>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/RuleCatagoryScheme -->
+
+
+    <owl:Class rdf:about="https://isotc204.org/25965/metr/RuleCatagoryScheme">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:subClassOf rdf:resource="https://isotc204.org/25965/METRThings"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://isotc204.org/25965/metr/ruleCategoryScheme"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://isotc204.org/25965/metr/RuleCatagoryScheme"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/RuleCategory -->
+
+
+    <owl:Class rdf:about="https://isotc204.org/25965/metr/RuleCategory">
+        <rdfs:subClassOf rdf:resource="https://isotc204.org/25965/METRThings"/>
+        <rdfs:subClassOf rdf:resource="https://isotc204.org/25965/metr/ConceptEntry"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://isotc204.org/25965/metr/categoryScheme"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://isotc204.org/25965/metr/RuleCatagoryScheme"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/SupportedRuleSet -->
+
+
+    <owl:Class rdf:about="https://isotc204.org/25965/metr/SupportedRuleSet">
+        <rdfs:subClassOf rdf:resource="https://isotc204.org/25965/METRThings"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://isotc204.org/25965/metr/coveredArea"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://isotc204.org/25965/DefinedArea"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://isotc204.org/25965/metr/levelOfSupport"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://isotc204.org/25965/metr/ruleCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://isotc204.org/25965/metr/RuleCategory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://isotc204.org/25965/metr/vehicleCategory"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://isotc204.org/25965/metr/VehicleCategory"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/VehicleCategory -->
+
+
+    <owl:Class rdf:about="https://isotc204.org/25965/metr/VehicleCategory">
+        <rdfs:subClassOf rdf:resource="https://isotc204.org/25965/METRThings"/>
+        <rdfs:subClassOf rdf:resource="https://isotc204.org/25965/metr/ConceptEntry"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://isotc204.org/25965/metr/vehicleCategoryScheme"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://isotc204.org/25965/metr/VehicleCategoryScheme"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/VehicleCategoryScheme -->
+
+
+    <owl:Class rdf:about="https://isotc204.org/25965/metr/VehicleCategoryScheme">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+        <rdfs:subClassOf rdf:resource="https://isotc204.org/25965/METRThings"/>
+    </owl:Class>
+    
+
+
+    <!-- https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code -->
+
+
+    <owl:Class rdf:about="https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- https://isotc204.org/25965/metr/all -->
+
+
+    <owl:NamedIndividual rdf:about="https://isotc204.org/25965/metr/all">
+        <rdf:type rdf:resource="https://isotc204.org/25965/metr/LevelOfSupportCode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/most -->
+
+
+    <owl:NamedIndividual rdf:about="https://isotc204.org/25965/metr/most">
+        <rdf:type rdf:resource="https://isotc204.org/25965/metr/LevelOfSupportCode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/none -->
+
+
+    <owl:NamedIndividual rdf:about="https://isotc204.org/25965/metr/none">
+        <rdf:type rdf:resource="https://isotc204.org/25965/metr/LevelOfSupportCode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://isotc204.org/25965/metr/some -->
+
+
+    <owl:NamedIndividual rdf:about="https://isotc204.org/25965/metr/some">
+        <rdf:type rdf:resource="https://isotc204.org/25965/metr/LevelOfSupportCode"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <rdf:Description rdf:about="https://isotc204.org/25965/identifier">
+        <rdfs:comment>A globally unique identifier, such as a GUID</rdfs:comment>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/ -->
+
+

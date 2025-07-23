@@ -1,0 +1,322 @@
+@prefix : <https://isotc204.org/25965/transport/transportnetwork#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://isotc204.org/25965/transport/transportnetwork#> .
+
+<https://isotc204.org/25965/transport/transportnetwork#> rdf:type owl:Ontology ;
+                                                          owl:imports <https://isotc204.org/25965/transport/travelcorridor> ,
+                                                                      <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code> ,
+                                                                      <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras> ,
+                                                                      <https://www.opengis.net/ont/geosparql> ,
+                                                                      <https://www.w3.org/2006/time> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://isotc204.org/25965/transport/transportnetwork#allowedDirections
+:allowedDirections rdf:type owl:ObjectProperty .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#code
+:code rdf:type owl:ObjectProperty .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#egress
+:egress rdf:type owl:ObjectProperty .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#from
+:from rdf:type owl:ObjectProperty .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#ingress
+:ingress rdf:type owl:ObjectProperty .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#status
+:status rdf:type owl:ObjectProperty .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#timeInterval
+:timeInterval rdf:type owl:ObjectProperty .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#to
+:to rdf:type owl:ObjectProperty .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#travelCorridorSegment
+:travelCorridorSegment rdf:type owl:ObjectProperty .
+
+
+###  https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> rdf:type owl:ObjectProperty .
+
+
+###  https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://isotc204.org/25965/transport/transportnetwork#designator
+:designator rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:string .
+
+
+###  https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties#hasIdentifier
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties#hasIdentifier> rdf:type owl:DatatypeProperty ;
+                                                                                             rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://isotc204.org/25965/transport/transportnetwork#ITSThing
+:ITSThing rdf:type owl:Class .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#Junction
+:Junction rdf:type owl:Class ;
+          rdfs:subClassOf :TransportNode .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#NetworkElement
+:NetworkElement rdf:type owl:Class ;
+                rdfs:subClassOf :ITSThing ,
+                                <https://www.opengis.net/ont/geosparql#Feature> ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :status ;
+                                  owl:allValuesFrom :Status
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> ;
+                                  owl:allValuesFrom :NetworkElement
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> ;
+                                  owl:allValuesFrom :NetworkElement
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties#hasIdentifier> ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:string
+                                ] .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#Status
+:Status rdf:type owl:Class .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#TransportNetwork
+:TransportNetwork rdf:type owl:Class ;
+                  rdfs:subClassOf :NetworkElement ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> ;
+                                    owl:allValuesFrom :TransportNetwork
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> ;
+                                    owl:allValuesFrom :TransportNode
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> ;
+                                    owl:allValuesFrom :TravelledWay
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> ;
+                                    owl:allValuesFrom :TravelledWayLink
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> ;
+                                    owl:allValuesFrom :TravelledWaySection
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> ;
+                                    owl:allValuesFrom :TransportNetwork
+                                  ] .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#TransportNode
+:TransportNode rdf:type owl:Class ;
+               rdfs:subClassOf :NetworkElement ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :egress ;
+                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :TravelledWayLink
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :ingress ;
+                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :TravelledWayLink
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> ;
+                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :TransportNetwork
+                               ] .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#TravelledWay
+:TravelledWay rdf:type owl:Class ;
+              rdfs:subClassOf :NetworkElement ,
+                              <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWay> ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> ;
+                                owl:allValuesFrom :TravelledWayLink
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> ;
+                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :TransportNetwork
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :designator ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string
+                              ] .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#TravelledWayLane
+:TravelledWayLane rdf:type owl:Class ;
+                  rdfs:subClassOf :NetworkElement ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :TravelledWaySegment
+                                  ] .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink
+:TravelledWayLink rdf:type owl:Class ;
+                  rdfs:subClassOf :NetworkElement ,
+                                  <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWayLink> ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> ;
+                                    owl:allValuesFrom :TravelledWaySegment
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> ;
+                                    owl:allValuesFrom :TravelledWay
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> ;
+                                    owl:allValuesFrom :TravelledWaySection
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> ;
+                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :TransportNetwork
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :from ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :TransportNode
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :to ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :TransportNode
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :allowedDirections ;
+                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code#Code>
+                                  ] .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#TravelledWaySection
+:TravelledWaySection rdf:type owl:Class ;
+                     rdfs:subClassOf :NetworkElement ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> ;
+                                       owl:allValuesFrom :TravelledWayLink
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> ;
+                                       owl:allValuesFrom :TravelledWaySegment
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> ;
+                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :TransportNetwork
+                                     ] .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#TravelledWaySegment
+:TravelledWaySegment rdf:type owl:Class ;
+                     rdfs:subClassOf :NetworkElement ,
+                                     <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWaySegment> ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :travelCorridorSegment ;
+                                       owl:allValuesFrom <https://isotc204.org/25965/transport/travelcorridor#TravelCorridorSegment>
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> ;
+                                       owl:allValuesFrom :TravelledWaySection
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart> ;
+                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :TravelledWayLane
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf> ;
+                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :TravelledWayLink
+                                     ] .
+
+
+###  https://isotc204.org/25965/transport/travelcorridor#TravelCorridorSegment
+<https://isotc204.org/25965/transport/travelcorridor#TravelCorridorSegment> rdf:type owl:Class .
+
+
+###  https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code#Code
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code#Code> rdf:type owl:Class .
+
+
+###  https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWay
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWay> rdf:type owl:Class .
+
+
+###  https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWayLink
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWayLink> rdf:type owl:Class .
+
+
+###  https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWaySegment
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWaySegment> rdf:type owl:Class .
+
+
+###  https://www.opengis.net/ont/geosparql#Feature
+<https://www.opengis.net/ont/geosparql#Feature> rdf:type owl:Class .
+
+
+###  https://www.w3.org/2006/time#DateTimeInterval
+<https://www.w3.org/2006/time#DateTimeInterval> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://isotc204.org/25965/transport/transportnetwork#Status
+:Status rdf:type owl:NamedIndividual ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :code ;
+                   owl:allValuesFrom <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code#Code>
+                 ] ,
+                 [ rdf:type owl:Restriction ;
+                   owl:onProperty :timeInterval ;
+                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                   owl:onClass <https://www.w3.org/2006/time#DateTimeInterval>
+                 ] .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

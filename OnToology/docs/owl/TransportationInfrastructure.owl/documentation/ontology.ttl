@@ -1,0 +1,248 @@
+@prefix : <http://ontology.eil.utoronto.ca/5087/TransportationInfrastructure#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://ontology.eil.utoronto.ca/5087/TransportationInfrastructure#> .
+
+<http://ontology.eil.utoronto.ca/5087/TransportationInfrastructure> rdf:type owl:Ontology ;
+                                                                     owl:imports <http://ontology.eil.utoronto.ca/5087/1/GenericProperties.owl> ,
+                                                                                 <http://ontology.eil.utoronto.ca/5087/1/Mereology.owl> ,
+                                                                                 <http://ontology.eil.utoronto.ca/5087/1/SpatialLoc.owl> ,
+                                                                                 <http://ontology.eil.utoronto.ca/5087/2/Infrastructure.owl> ;
+                                                                     <http://purl.org/dc/elements/1.1/description> "The Transportation Infrastructure pattern defines the concepts that are relevant in describing the physical transportation infrastructure and their characteristics. This includes the concepts of a Road, Bridge, and Tunnel. The Infrastructure Pattern is reused here, as these transportation structures are all defined as types of (subclasses) Infrastructure Elements." ;
+                                                                     <http://purl.org/dc/elements/1.1/issued> "May 3, 2021" ;
+                                                                     <http://purl.org/dc/elements/1.1/title> "Transportation Infrastructure Pattern" ;
+                                                                     owl:versionInfo 1.0 ;
+                                                                     <http://www.w3.org/ns/adms#relatedDocumentation> "Under development. Refer to latest draft of ISO 5087-2." .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://creativecommons.org/ns#license
+<http://creativecommons.org/ns#license> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+<http://purl.org/dc/elements/1.1/date> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/issued
+<http://purl.org/dc/elements/1.1/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+<http://purl.org/dc/terms/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/issued
+<http://purl.org/dc/terms/issued> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+<http://purl.org/dc/terms/modified> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/rights
+<http://purl.org/dc/terms/rights> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+<http://purl.org/dc/terms/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/ns/adms#relatedDocumentation
+<http://www.w3.org/ns/adms#relatedDocumentation> rdf:type owl:AnnotationProperty .
+
+
+###  http://xmlns.com/foaf/0.1/based_near
+<http://xmlns.com/foaf/0.1/based_near> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/contains
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/contains> rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasName
+<https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasName> rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement
+<http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement> rdf:type owl:Class .
+
+
+###  http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/Bridge
+<http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/Bridge> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement> ,
+                                                                                             <http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing> ,
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <http://ontology.eil.utoronto.ca/5087/1/SpatialLoc/hasLocation> ;
+                                                                                               owl:allValuesFrom <http://www.opengis.net/ont/geosparql#Feature>
+                                                                                             ] ,
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/contains> ;
+                                                                                               owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                                                                   owl:unionOf ( <http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RailLineSegment>
+                                                                                                                                 <http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RoadSegment>
+                                                                                                                               )
+                                                                                                                 ]
+                                                                                             ] ,
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasProperPart> ;
+                                                                                               owl:allValuesFrom <http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/BridgeSegment>
+                                                                                             ] ,
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasName> ;
+                                                                                               owl:allValuesFrom xsd:string
+                                                                                             ] .
+
+
+###  http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/BridgeSegment
+<http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/BridgeSegment> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement> ,
+                                                                                                    <http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing> ,
+                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty <http://ontology.eil.utoronto.ca/5087/1/SpatialLoc/hasLocation> ;
+                                                                                                      owl:allValuesFrom <http://www.opengis.net/ont/geosparql#Feature>
+                                                                                                    ] .
+
+
+###  http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RailLine
+<http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RailLine> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement> ,
+                                                                                               <http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing> ,
+                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <http://ontology.eil.utoronto.ca/5087/1/SpatialLoc/hasLocation> ;
+                                                                                                 owl:allValuesFrom <http://www.opengis.net/ont/geosparql#Feature>
+                                                                                               ] ,
+                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasProperPart> ;
+                                                                                                 owl:allValuesFrom <http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RailLineSegment>
+                                                                                               ] ,
+                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                 owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasName> ;
+                                                                                                 owl:allValuesFrom xsd:string
+                                                                                               ] .
+
+
+###  http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RailLineSegment
+<http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RailLineSegment> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf <http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement> ,
+                                                                                                      <http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing> ,
+                                                                                                      [ rdf:type owl:Restriction ;
+                                                                                                        owl:onProperty <http://ontology.eil.utoronto.ca/5087/1/SpatialLoc/hasLocation> ;
+                                                                                                        owl:allValuesFrom <http://www.opengis.net/ont/geosparql#Feature>
+                                                                                                      ] .
+
+
+###  http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/Road
+<http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/Road> rdf:type owl:Class ;
+                                                                           rdfs:subClassOf <http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement> ,
+                                                                                           <http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing> ,
+                                                                                           [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty <http://ontology.eil.utoronto.ca/5087/1/SpatialLoc/hasLocation> ;
+                                                                                             owl:allValuesFrom <http://www.opengis.net/ont/geosparql#Feature>
+                                                                                           ] ,
+                                                                                           [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasProperPart> ;
+                                                                                             owl:allValuesFrom <http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RoadSegment>
+                                                                                           ] ,
+                                                                                           [ rdf:type owl:Restriction ;
+                                                                                             owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasName> ;
+                                                                                             owl:allValuesFrom xsd:string
+                                                                                           ] .
+
+
+###  http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RoadSegment
+<http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RoadSegment> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement> ,
+                                                                                                  <http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing> ,
+                                                                                                  [ rdf:type owl:Restriction ;
+                                                                                                    owl:onProperty <http://ontology.eil.utoronto.ca/5087/1/SpatialLoc/hasLocation> ;
+                                                                                                    owl:allValuesFrom <http://www.opengis.net/ont/geosparql#Feature>
+                                                                                                  ] .
+
+
+###  http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing
+<http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing> rdf:type owl:Class .
+
+
+###  http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/Tunnel
+<http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/Tunnel> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement> ,
+                                                                                             <http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing> ,
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <http://ontology.eil.utoronto.ca/5087/1/SpatialLoc/hasLocation> ;
+                                                                                               owl:allValuesFrom <http://www.opengis.net/ont/geosparql#Feature>
+                                                                                             ] ,
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/contains> ;
+                                                                                               owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                                                                   owl:unionOf ( <http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RailLineSegment>
+                                                                                                                                 <http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/RoadSegment>
+                                                                                                                               )
+                                                                                                                 ]
+                                                                                             ] ,
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/hasProperPart> ;
+                                                                                               owl:allValuesFrom <http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TunnelSegment>
+                                                                                             ] ,
+                                                                                             [ rdf:type owl:Restriction ;
+                                                                                               owl:onProperty <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties/hasName> ;
+                                                                                               owl:allValuesFrom xsd:string
+                                                                                             ] .
+
+
+###  http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TunnelSegment
+<http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TunnelSegment> rdf:type owl:Class ;
+                                                                                    rdfs:subClassOf <http://ontology.eil.utoronto.ca/5087/2/Infrastructure/InfrastructureElement> ,
+                                                                                                    <http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/TransportationInfrastructureOntologyThing> ,
+                                                                                                    [ rdf:type owl:Restriction ;
+                                                                                                      owl:onProperty <http://ontology.eil.utoronto.ca/5087/1/SpatialLoc/hasLocation> ;
+                                                                                                      owl:allValuesFrom <http://www.opengis.net/ont/geosparql#Feature>
+                                                                                                    ] .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/

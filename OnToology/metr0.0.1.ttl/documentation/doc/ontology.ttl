@@ -1,0 +1,268 @@
+@prefix : <https://isotc204.org/25965/metr/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://isotc204.org/25965/metr/> .
+
+<https://isotc204.org/25965/metr/> rdf:type owl:Ontology ;
+                                    owl:imports <http://isotc204.org/25965/class-scheme> ,
+                                                <http://www.opengis.net/ont/geosparql/1.1> ,
+                                                <http://www.w3.org/2004/02/skos/core> ,
+                                                <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/> ;
+                                    rdfs:comment "Ontology for the management of electronic traffic regulations"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2000/01/rdf-schema#definition
+rdfs:definition rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://isotc204.org/25965/identifier
+<https://isotc204.org/25965/identifier> rdf:type owl:ObjectProperty .
+
+
+###  https://isotc204.org/25965/metr/METRObjectProperty
+:METRObjectProperty rdf:type owl:ObjectProperty .
+
+
+###  https://isotc204.org/25965/metr/categoryScheme
+:categoryScheme rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :METRObjectProperty ;
+                rdfs:range [ rdf:type owl:Restriction ;
+                             owl:onProperty :coveredArea ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass <http://www.w3.org/2004/02/skos/core#ConceptScheme>
+                           ] .
+
+
+###  https://isotc204.org/25965/metr/coveredArea
+:coveredArea rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :METRObjectProperty ;
+             rdfs:range [ rdf:type owl:Restriction ;
+                          owl:onProperty :coveredArea ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass <https://isotc204.org/25965/DefinedArea>
+                        ] .
+
+
+###  https://isotc204.org/25965/metr/levelOfSupport
+:levelOfSupport rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :METRObjectProperty ;
+                rdfs:range <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code> .
+
+
+###  https://isotc204.org/25965/metr/ruleCategory
+:ruleCategory rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :METRObjectProperty .
+
+
+###  https://isotc204.org/25965/metr/ruleCategoryScheme
+:ruleCategoryScheme rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :METRObjectProperty .
+
+
+###  https://isotc204.org/25965/metr/supportedRuleSet
+:supportedRuleSet rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :METRObjectProperty .
+
+
+###  https://isotc204.org/25965/metr/vehicleCategory
+:vehicleCategory rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :METRObjectProperty .
+
+
+###  https://isotc204.org/25965/metr/vehicleCategoryScheme
+:vehicleCategoryScheme rdf:type owl:ObjectProperty ;
+                       rdfs:subPropertyOf :METRObjectProperty ;
+                       rdfs:domain <https://isotc204.org/25965/METRCatalogue> ;
+                       rdfs:range <http://www.w3.org/2004/02/skos/core#ConceptScheme> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://isotc204.org/25965/identifier
+<https://isotc204.org/25965/identifier> rdf:type owl:DatatypeProperty ;
+                                        rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://isotc204.org/25965/DefinedArea
+<https://isotc204.org/25965/DefinedArea> rdf:type owl:Class ;
+                                         rdfs:subClassOf <https://isotc204.org/25965/METRThings> ,
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty <https://isotc204.org/25965/identifier> ;
+                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onDataRange xsd:string
+                                                         ] .
+
+
+###  https://isotc204.org/25965/METRCatalogue
+<https://isotc204.org/25965/METRCatalogue> rdf:type owl:Class ;
+                                           rdfs:subClassOf <https://isotc204.org/25965/METRThings> ,
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :supportedRuleSet ;
+                                                             owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                             owl:onClass :SupportedRuleSet
+                                                           ] ;
+                                           rdfs:comment "While it is desirable to have all implementations use a single scheme, the identifier allows graceful migration to alternative schemes as deemed necessary - hopefully as a temporary solution until enhancements are incorporated into the next evolution of the standard scheme."@en ;
+                                           rdfs:definition "A container that holds traffic regulations for a defined area organized according to a defined classification scheme."@en .
+
+
+###  https://isotc204.org/25965/METRThings
+<https://isotc204.org/25965/METRThings> rdf:type owl:Class .
+
+
+###  https://isotc204.org/25965/TrafficRegulation
+<https://isotc204.org/25965/TrafficRegulation> rdf:type owl:Class ;
+                                               rdfs:subClassOf <https://isotc204.org/25965/METRThings> ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :ruleCategory ;
+                                                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                 owl:onClass :RuleCategory
+                                                               ] ,
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty :vehicleCategory ;
+                                                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                 owl:onClass :VehicleCategory
+                                                               ] .
+
+
+###  https://isotc204.org/25965/metr/ConceptEntry
+:ConceptEntry rdf:type owl:Class ;
+              rdfs:subClassOf <https://isotc204.org/25965/METRThings> ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :categoryScheme ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass <http://www.w3.org/2004/02/skos/core#ConceptScheme>
+                              ] ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty <https://isotc204.org/25965/identifier> ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onDataRange xsd:string
+                              ] .
+
+
+###  https://isotc204.org/25965/metr/CyberLocation
+:CyberLocation rdf:type owl:Class ;
+               rdfs:subClassOf <https://isotc204.org/25965/METRThings> .
+
+
+###  https://isotc204.org/25965/metr/LevelOfSupportCode
+:LevelOfSupportCode rdf:type owl:Class ;
+                    rdfs:subClassOf <https://isotc204.org/25965/METRThings> ,
+                                    <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code> .
+
+
+###  https://isotc204.org/25965/metr/RuleCatagoryScheme
+:RuleCatagoryScheme rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#ConceptScheme> ,
+                                    <https://isotc204.org/25965/METRThings> ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :ruleCategoryScheme ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :RuleCatagoryScheme
+                                    ] .
+
+
+###  https://isotc204.org/25965/metr/RuleCategory
+:RuleCategory rdf:type owl:Class ;
+              rdfs:subClassOf <https://isotc204.org/25965/METRThings> ,
+                              :ConceptEntry ,
+                              [ rdf:type owl:Restriction ;
+                                owl:onProperty :categoryScheme ;
+                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :RuleCatagoryScheme
+                              ] .
+
+
+###  https://isotc204.org/25965/metr/SupportedRuleSet
+:SupportedRuleSet rdf:type owl:Class ;
+                  rdfs:subClassOf <https://isotc204.org/25965/METRThings> ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :coveredArea ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass <https://isotc204.org/25965/DefinedArea>
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :levelOfSupport ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code>
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :ruleCategory ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :RuleCategory
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :vehicleCategory ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass :VehicleCategory
+                                  ] .
+
+
+###  https://isotc204.org/25965/metr/VehicleCategory
+:VehicleCategory rdf:type owl:Class ;
+                 rdfs:subClassOf <https://isotc204.org/25965/METRThings> ,
+                                 :ConceptEntry ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :vehicleCategoryScheme ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass :VehicleCategoryScheme
+                                 ] .
+
+
+###  https://isotc204.org/25965/metr/VehicleCategoryScheme
+:VehicleCategoryScheme rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#ConceptScheme> ,
+                                       <https://isotc204.org/25965/METRThings> .
+
+
+###  https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code
+<https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/Code> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://isotc204.org/25965/metr/all
+:all rdf:type owl:NamedIndividual ,
+              :LevelOfSupportCode .
+
+
+###  https://isotc204.org/25965/metr/most
+:most rdf:type owl:NamedIndividual ,
+               :LevelOfSupportCode .
+
+
+###  https://isotc204.org/25965/metr/none
+:none rdf:type owl:NamedIndividual ,
+               :LevelOfSupportCode .
+
+
+###  https://isotc204.org/25965/metr/some
+:some rdf:type owl:NamedIndividual ,
+               :LevelOfSupportCode .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<https://isotc204.org/25965/identifier> rdfs:comment "A globally unique identifier, such as a GUID" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
