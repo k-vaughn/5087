@@ -1,0 +1,39 @@
+{
+  "@context" : {
+    "versionInfo" : {
+      "@id" : "http://www.w3.org/2002/07/owl#versionInfo"
+    },
+    "describedByScheme" : {
+      "@id" : "https://isotc204.org/25965/class-scheme#describedByScheme",
+      "@type" : "@id"
+    },
+    "label" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#label"
+    },
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator",
+      "@type" : "@id"
+    },
+    "ConceptScheme" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    },
+    "title" : {
+      "@id" : "http://purl.org/dc/terms/title"
+    },
+    "ClassificationScheme" : {
+      "@id" : "https://isotc204.org/25965/class-scheme#ClassificationScheme"
+    },
+    "Resource" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#Resource"
+    },
+    "comment" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#comment"
+    },
+    "prefLabel" : {
+      "@id" : "http://www.w3.org/2004/02/skos/core#prefLabel"
+    },
+    "description" : {
+      "@id" : "http://purl.org/dc/terms/description"
+    }
+  }
+}
