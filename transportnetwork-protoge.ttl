@@ -1,0 +1,330 @@
+@prefix : <https://isotc204.org/25965/transport/transportnetwork#> .
+@prefix geo: <https://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix code: <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <https://www.w3.org/2006/time#> .
+@prefix genProp: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties#> .
+@prefix partwhole: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#> .
+@prefix transinfras: <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#> .
+@prefix travelcorridor: <https://isotc204.org/25965/transport/travelcorridor#> .
+@prefix transportnetwork: <https://isotc204.org/25965/transport/transportnetwork#> .
+@base <https://isotc204.org/25965/transport/transportnetwork#> .
+
+<https://isotc204.org/25965/transport/transportnetwork#> rdf:type owl:Ontology ;
+                                                          owl:imports <https://isotc204.org/25965/transport/travelcorridor> ,
+                                                                      <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code> ,
+                                                                      <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras> ,
+                                                                      <https://www.opengis.net/ont/geosparql> ,
+                                                                      <https://www.w3.org/2006/time> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://isotc204.org/25965/transport/transportnetwork#allowedDirections
+transportnetwork:allowedDirections rdf:type owl:ObjectProperty .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#code
+transportnetwork:code rdf:type owl:ObjectProperty .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#egress
+transportnetwork:egress rdf:type owl:ObjectProperty .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#from
+transportnetwork:from rdf:type owl:ObjectProperty .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#ingress
+transportnetwork:ingress rdf:type owl:ObjectProperty .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#status
+transportnetwork:status rdf:type owl:ObjectProperty .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#timeInterval
+transportnetwork:timeInterval rdf:type owl:ObjectProperty .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#to
+transportnetwork:to rdf:type owl:ObjectProperty .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#travelCorridorSegment
+transportnetwork:travelCorridorSegment rdf:type owl:ObjectProperty .
+
+
+###  https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#hasProperPart
+partwhole:hasProperPart rdf:type owl:ObjectProperty .
+
+
+###  https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#properPartOf
+partwhole:properPartOf rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://isotc204.org/25965/transport/transportnetwork#designator
+transportnetwork:designator rdf:type owl:DatatypeProperty ;
+                            rdfs:range xsd:string .
+
+
+###  https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/GenericProperties#hasIdentifier
+genProp:hasIdentifier rdf:type owl:DatatypeProperty ;
+                      rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://isotc204.org/25965/transport/transportnetwork#ITSThing
+transportnetwork:ITSThing rdf:type owl:Class .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#Junction
+transportnetwork:Junction rdf:type owl:Class ;
+                          rdfs:subClassOf transportnetwork:TransportNode .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#NetworkElement
+transportnetwork:NetworkElement rdf:type owl:Class ;
+                                rdfs:subClassOf transportnetwork:ITSThing ,
+                                                geo:Feature ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty transportnetwork:status ;
+                                                  owl:allValuesFrom transportnetwork:Status
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty partwhole:hasProperPart ;
+                                                  owl:allValuesFrom transportnetwork:NetworkElement
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty partwhole:properPartOf ;
+                                                  owl:allValuesFrom transportnetwork:NetworkElement
+                                                ] ,
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty genProp:hasIdentifier ;
+                                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                  owl:onDataRange xsd:string
+                                                ] .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#Status
+transportnetwork:Status rdf:type owl:Class .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#TransportNetwork
+transportnetwork:TransportNetwork rdf:type owl:Class ;
+                                  rdfs:subClassOf transportnetwork:NetworkElement ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty partwhole:hasProperPart ;
+                                                    owl:allValuesFrom transportnetwork:TransportNetwork
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty partwhole:hasProperPart ;
+                                                    owl:allValuesFrom transportnetwork:TransportNode
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty partwhole:hasProperPart ;
+                                                    owl:allValuesFrom transportnetwork:TravelledWay
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty partwhole:hasProperPart ;
+                                                    owl:allValuesFrom transportnetwork:TravelledWayLink
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty partwhole:hasProperPart ;
+                                                    owl:allValuesFrom transportnetwork:TravelledWaySection
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty partwhole:properPartOf ;
+                                                    owl:allValuesFrom transportnetwork:TransportNetwork
+                                                  ] .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#TransportNode
+transportnetwork:TransportNode rdf:type owl:Class ;
+                               rdfs:subClassOf transportnetwork:NetworkElement ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty transportnetwork:egress ;
+                                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onClass transportnetwork:TravelledWayLink
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty transportnetwork:ingress ;
+                                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onClass transportnetwork:TravelledWayLink
+                                               ] ,
+                                               [ rdf:type owl:Restriction ;
+                                                 owl:onProperty partwhole:properPartOf ;
+                                                 owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onClass transportnetwork:TransportNetwork
+                                               ] .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#TravelledWay
+transportnetwork:TravelledWay rdf:type owl:Class ;
+                              rdfs:subClassOf transportnetwork:NetworkElement ,
+                                              transinfras:TravelledWay ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty partwhole:hasProperPart ;
+                                                owl:allValuesFrom transportnetwork:TravelledWayLink
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty partwhole:properPartOf ;
+                                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass transportnetwork:TransportNetwork
+                                              ] ,
+                                              [ rdf:type owl:Restriction ;
+                                                owl:onProperty transportnetwork:designator ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onDataRange xsd:string
+                                              ] .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#TravelledWayLane
+transportnetwork:TravelledWayLane rdf:type owl:Class ;
+                                  rdfs:subClassOf transportnetwork:NetworkElement ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty partwhole:properPartOf ;
+                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onClass transportnetwork:TravelledWaySegment
+                                                  ] .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#TravelledWayLink
+transportnetwork:TravelledWayLink rdf:type owl:Class ;
+                                  rdfs:subClassOf transportnetwork:NetworkElement ,
+                                                  transinfras:TravelledWayLink ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty partwhole:hasProperPart ;
+                                                    owl:allValuesFrom transportnetwork:TravelledWaySegment
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty partwhole:properPartOf ;
+                                                    owl:allValuesFrom transportnetwork:TravelledWay
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty partwhole:properPartOf ;
+                                                    owl:allValuesFrom transportnetwork:TravelledWaySection
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty partwhole:properPartOf ;
+                                                    owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onClass transportnetwork:TransportNetwork
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty transportnetwork:from ;
+                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onClass transportnetwork:TransportNode
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty transportnetwork:to ;
+                                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onClass transportnetwork:TransportNode
+                                                  ] ,
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty transportnetwork:allowedDirections ;
+                                                    owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                    owl:onClass code:Code
+                                                  ] .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#TravelledWaySection
+transportnetwork:TravelledWaySection rdf:type owl:Class ;
+                                     rdfs:subClassOf transportnetwork:NetworkElement ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty partwhole:hasProperPart ;
+                                                       owl:allValuesFrom transportnetwork:TravelledWayLink
+                                                     ] ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty partwhole:hasProperPart ;
+                                                       owl:allValuesFrom transportnetwork:TravelledWaySegment
+                                                     ] ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty partwhole:properPartOf ;
+                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass transportnetwork:TransportNetwork
+                                                     ] .
+
+
+###  https://isotc204.org/25965/transport/transportnetwork#TravelledWaySegment
+transportnetwork:TravelledWaySegment rdf:type owl:Class ;
+                                     rdfs:subClassOf transportnetwork:NetworkElement ,
+                                                     transinfras:TravelledWaySegment ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty transportnetwork:travelCorridorSegment ;
+                                                       owl:allValuesFrom travelcorridor:TravelCorridorSegment
+                                                     ] ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty partwhole:properPartOf ;
+                                                       owl:allValuesFrom transportnetwork:TravelledWaySection
+                                                     ] ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty partwhole:hasProperPart ;
+                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass transportnetwork:TravelledWayLane
+                                                     ] ,
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty partwhole:properPartOf ;
+                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass transportnetwork:TravelledWayLink
+                                                     ] .
+
+
+###  https://isotc204.org/25965/transport/travelcorridor#TravelCorridorSegment
+travelcorridor:TravelCorridorSegment rdf:type owl:Class .
+
+
+###  https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code#Code
+code:Code rdf:type owl:Class .
+
+
+###  https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWay
+transinfras:TravelledWay rdf:type owl:Class .
+
+
+###  https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWayLink
+transinfras:TravelledWayLink rdf:type owl:Class .
+
+
+###  https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#TravelledWaySegment
+transinfras:TravelledWaySegment rdf:type owl:Class .
+
+
+###  https://www.opengis.net/ont/geosparql#Feature
+geo:Feature rdf:type owl:Class .
+
+
+###  https://www.w3.org/2006/time#DateTimeInterval
+time:DateTimeInterval rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://isotc204.org/25965/transport/transportnetwork#Status
+transportnetwork:Status rdf:type owl:NamedIndividual ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty transportnetwork:code ;
+                                   owl:allValuesFrom code:Code
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty transportnetwork:timeInterval ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass time:DateTimeInterval
+                                 ] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

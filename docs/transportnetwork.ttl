@@ -16,6 +16,7 @@
 <https://isotc204.org/25965/transport/transportnetwork#> rdf:type owl:Ontology ;
 
 owl:imports 
+    <https://isotc204.org/25965/transport/transportnetwork> ,
     <https://www.opengis.net/ont/geosparql> ,
     <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code> ,
     <https://www.w3.org/2006/time> ,

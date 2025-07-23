@@ -1,0 +1,9 @@
+site_name: METR Ontology Documentation
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Diagrams: diagrams.md
+plugins:
+  - search
+  - mkdocs-material

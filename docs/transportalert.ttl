@@ -1,0 +1,215 @@
+@prefix : <https://isotc204.org/25965/transport/transportalert#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
+@prefix time: <https://www.w3.org/2006/time#> .
+@prefix code: <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code#> .
+@prefix transportalert: <https://isotc204.org/25965/transport/transportalert#> .
+@prefix activity: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology//activity#> .
+@prefix geo: <https://www.opengis.net/ont/geosparql#> .
+@prefix transportnetwork: <https://isotc204.org/25965/transport/transportnetwork#> .
+@base <https://isotc204.org/25965/transport/transportalert#> .
+<https://isotc204.org/25965/transport/transportalert#> rdf:type owl:Ontology ;
+
+owl:imports 
+    <https://www.w3.org/2006/time> ,
+    <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code> ,
+    <https://isotc204.org/25965/transport/transportalert> ,
+    <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology//activity> ,
+    <https://www.opengis.net/ont/geosparql> ,
+    <https://isotc204.org/25965/transport/transportnetwork> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+transportalert:creationTime rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf transportalert:transportalertProperty .
+
+transportalert:lastUpdateTime rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf transportalert:transportalertProperty .
+
+transportalert:status rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf transportalert:transportalertProperty .
+
+transportalert:distribution rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf transportalert:transportalertProperty .
+
+transportalert:referencedAlert rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf transportalert:transportalertProperty .
+
+transportalert:activities rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf transportalert:transportalertProperty .
+
+transportalert:category rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf transportalert:transportalertProperty .
+
+transportalert:effect rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf transportalert:transportalertProperty .
+
+transportalert:recommendation rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf transportalert:transportalertProperty .
+
+transportalert:urgency rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf transportalert:transportalertProperty .
+
+transportalert:severity rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf transportalert:transportalertProperty .
+
+transportalert:certainty rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf transportalert:transportalertProperty .
+
+transportalert:beginTime rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf transportalert:transportalertProperty .
+
+transportalert:expiryTime rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf transportalert:transportalertProperty .
+
+transportalert:endTime rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf transportalert:transportalertProperty .
+
+transportalert:location rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf transportalert:transportalertProperty .
+
+transportalert:cause rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf transportalert:transportalertProperty .
+
+transportalert:affects rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf transportalert:transportalertProperty .
+
+
+#################################################################
+#    Data Properties
+#################################################################
+
+transportalert:issuer rdf:type owl:DatatypeProperty ;
+	rdfs:range transportalert:int .
+
+transportalert:website rdf:type owl:DatatypeProperty ;
+	rdfs:range transportalert:URL .
+
+transportalert:resources rdf:type owl:DatatypeProperty ;
+	rdfs:range transportalert:URI .
+
+transportalert:headline rdf:type owl:DatatypeProperty ;
+	rdfs:range transportalert:xsd:string .
+
+transportalert:genProp:hasDescription rdf:type owl:DatatypeProperty ;
+	rdfs:range transportalert:xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+transportalert:Alert rdf:type owl:Class ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:creationTime ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass time:Instant
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:lastUpdateTime ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass time:Instant
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:status ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass code:Code
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:distribution ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass code:Code
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:referencedAlert ;
+          owl:allValuesFrom transportalert:Alert ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:activities ;
+          owl:allValuesFrom activity:Activity ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:category ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass code:Code
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:effect ;
+          owl:allValuesFrom code:Code ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:recommendation ;
+          owl:allValuesFrom code:Code ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:urgency ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass code:Code
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:severity ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass code:Code
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:certainty ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass code:Code
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:beginTime ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass time:Instant
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:expiryTime ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass time:Instant
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:endTime ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass time:Instant
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:location ;
+          owl:allValuesFrom geo:Geometry ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:cause ;
+          owl:allValuesFrom code:Code ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:issuer ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange transportalert:int
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:website ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange transportalert:URL
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:resources ;
+          owl:allValuesFrom transportalert:URI ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:headline ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange transportalert:xsd:string
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:genProp:hasDescription ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange transportalert:xsd:string
+        ] .
+transportalert:TransportAlert rdf:type owl:Class ;
+	rdfs:subClassOf transportalert:Alert,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty transportalert:affects ;
+          owl:allValuesFrom transportnetwork:NetworkElement ;
+        ] .

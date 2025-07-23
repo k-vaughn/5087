@@ -1,0 +1,235 @@
+@prefix : <https://isotc204.org/25965/transport/roadnetwork#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
+@prefix transportnetwork: <https://isotc204.org/25965/transport/transportnetwork#> .
+@prefix transinfras: <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras#> .
+@prefix partwhole: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#> .
+@prefix roadnetwork: <https://isotc204.org/25965/transport/roadnetwork#> .
+@prefix cityunits: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology//cityunits#> .
+@prefix code: <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code#> .
+@base <https://isotc204.org/25965/transport/roadnetwork#> .
+<https://isotc204.org/25965/transport/roadnetwork#> rdf:type owl:Ontology ;
+
+owl:imports 
+    <https://isotc204.org/25965/transport/transportnetwork> ,
+    <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/transinfras> ,
+    <https://isotc204.org/25965/transport/roadnetwork> ,
+    <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology//cityunits> ,
+    <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+partwhole:properPartOf rdf:type owl:ObjectProperty .
+
+partwhole:hasProperPart rdf:type owl:ObjectProperty .
+
+roadnetwork:previous rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf roadnetwork:roadnetworkProperty .
+
+roadnetwork:next rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf roadnetwork:roadnetworkProperty .
+
+roadnetwork:usedBy rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf roadnetwork:roadnetworkProperty .
+
+roadnetwork:primaryUser rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf roadnetwork:roadnetworkProperty .
+
+roadnetwork:uses rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf roadnetwork:roadnetworkProperty .
+
+roadnetwork:speedLimit rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf roadnetwork:roadnetworkProperty .
+
+roadnetwork:travelTime rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf roadnetwork:roadnetworkProperty .
+
+roadnetwork:pavementType rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf roadnetwork:roadnetworkProperty .
+
+
+#################################################################
+#    Data Properties
+#################################################################
+
+roadnetwork:width rdf:type owl:DatatypeProperty ;
+	rdfs:range roadnetwork:int .
+
+roadnetwork:maxLanes rdf:type owl:DatatypeProperty ;
+	rdfs:range roadnetwork:nonNegativeInteger .
+
+roadnetwork:capacity rdf:type owl:DatatypeProperty ;
+	rdfs:range roadnetwork:nonNegativeInteger .
+
+roadnetwork:userCategory rdf:type owl:DatatypeProperty ;
+	rdfs:range roadnetwork:RoadUserCategoryEnum .
+
+roadnetwork:numLanes rdf:type owl:DatatypeProperty ;
+	rdfs:range roadnetwork:int .
+
+roadnetwork:width rdf:type owl:DatatypeProperty ;
+	rdfs:range roadnetwork:int .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+roadnetwork:Road rdf:type owl:Class ;
+	rdfs:subClassOf transportnetwork:TravelledWay, transinfras:Road,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:properPartOf ;
+          owl:allValuesFrom roadnetwork:RoadNetwork ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:hasProperPart ;
+          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass roadnetwork:RoadLink
+        ] .
+roadnetwork:RoadLane rdf:type owl:Class ;
+	rdfs:subClassOf transportnetwork:TravelledWayLane,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty roadnetwork:previous ;
+          owl:allValuesFrom roadnetwork:RoadLane ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:properPartOf ;
+          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass roadnetwork:RoadSegment
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty roadnetwork:next ;
+          owl:allValuesFrom roadnetwork:RoadLane ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty roadnetwork:width ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange roadnetwork:int
+        ] .
+roadnetwork:RoadLink rdf:type owl:Class ;
+	rdfs:subClassOf transportnetwork:TravelledWayLink, transinfras:RoadLink,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:properPartOf ;
+          owl:allValuesFrom roadnetwork:Road ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:properPartOf ;
+          owl:allValuesFrom roadnetwork:RoadNetwork ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:properPartOf ;
+          owl:allValuesFrom roadnetwork:RoadSection ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:hasProperPart ;
+          owl:allValuesFrom roadnetwork:RoadSegment ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty roadnetwork:usedBy ;
+          owl:allValuesFrom roadnetwork:RoadLinkUser ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty roadnetwork:primaryUser ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass roadnetwork:RoadLinkUser
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty roadnetwork:maxLanes ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange roadnetwork:nonNegativeInteger
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty roadnetwork:capacity ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange roadnetwork:nonNegativeInteger
+        ] .
+roadnetwork:RoadLinkUser rdf:type owl:Class ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty roadnetwork:uses ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass roadnetwork:RoadLink
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty roadnetwork:uses ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass roadnetwork:RoadLink
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty roadnetwork:speedLimit ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass cityunits:Speed
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty roadnetwork:travelTime ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass cityunits:Duration
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty roadnetwork:userCategory ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange roadnetwork:RoadUserCategoryEnum
+        ] .
+roadnetwork:RoadNetwork rdf:type owl:Class ;
+	rdfs:subClassOf transportnetwork:TransportNetwork,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:hasProperPart ;
+          owl:allValuesFrom roadnetwork:Road ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:hasProperPart ;
+          owl:allValuesFrom roadnetwork:RoadSection ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:hasProperPart ;
+          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass roadnetwork:RoadLink
+        ] .
+roadnetwork:RoadSection rdf:type owl:Class ;
+	rdfs:subClassOf transportnetwork:TravelledWaySection,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:properPartOf ;
+          owl:allValuesFrom roadnetwork:RoadNetwork ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:hasProperPart ;
+          owl:allValuesFrom roadnetwork:RoadLink ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:hasProperPart ;
+          owl:allValuesFrom roadnetwork:RoadSegment ;
+        ] .
+roadnetwork:RoadSegment rdf:type owl:Class ;
+	rdfs:subClassOf transportnetwork:TravelledWaySegment, transinfras:RoadSegment,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:properPartOf ;
+          owl:allValuesFrom roadnetwork:RoadSection ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:hasProperPart ;
+          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass roadnetwork:RoadLane
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:properPartOf ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass roadnetwork:RoadLink
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty roadnetwork:pavementType ;
+          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass code:Code
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty roadnetwork:numLanes ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange roadnetwork:int
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty roadnetwork:width ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onDataRange roadnetwork:int
+        ] .

@@ -1,0 +1,24 @@
+// Diagram for NetworkElement
+digraph {
+	graph [overlap=false splines=true]
+	node [fontname=Arial fontsize=12 shape=record]
+	edge [fontname=Arial fontsize=10]
+	subgraph cluster_main {
+		rankdir=TB style=invis
+		ITSThing [label=ITSThing]
+		geo_Feature [label="geo:Feature"]
+		{
+			rank=max
+			NetworkElement [label="{NetworkElement|genProp:hasIdentifier: string [1]}"]
+		}
+		NetworkElement -> ITSThing [arrowhead=onormal style=solid]
+		NetworkElement -> geo_Feature [arrowhead=onormal style=solid]
+		NetworkElement:e -> NetworkElement [label="partwhole:hasProperPart"]
+		NetworkElement:w -> NetworkElement [label="partwhole:properPartOf"]
+	}
+	subgraph cluster_others {
+		style=invis
+		Status [label=Status]
+	}
+	NetworkElement:s -> Status [label=status]
+}

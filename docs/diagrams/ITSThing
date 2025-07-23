@@ -1,0 +1,16 @@
+// Diagram for ITSThing
+digraph {
+	graph [overlap=false splines=true]
+	node [fontname=Arial fontsize=12 shape=record]
+	edge [fontname=Arial fontsize=10]
+	subgraph cluster_main {
+		rankdir=TB style=invis
+		{
+			rank=max
+			ITSThing [label="{ITSThing|}"]
+		}
+	}
+	subgraph cluster_others {
+		style=invis
+	}
+}

@@ -1,0 +1,88 @@
+@prefix : <https://isotc204.org/25965/transport/publictrans#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace#> .
+@prefix partwhole: <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology#> .
+@prefix publictrans: <https://isotc204.org/25965/transport/publictrans#> .
+@prefix code: <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code#> .
+@base <https://isotc204.org/25965/transport/publictrans#> .
+<https://isotc204.org/25965/transport/publictrans#> rdf:type owl:Ontology ;
+
+owl:imports 
+    <https://isotc204.org/25965/transport/publictrans> ,
+    <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+partwhole:properPartOf rdf:type owl:ObjectProperty .
+
+partwhole:hasProperPart rdf:type owl:ObjectProperty .
+
+publictrans:allowedDirections rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf publictrans:publictransProperty .
+
+publictrans:direction rdf:type owl:ObjectProperty ;
+	rdfs:SubPropertyOf publictrans:publictransProperty .
+
+
+#################################################################
+#    Data Properties
+#################################################################
+
+
+#################################################################
+#    Classes
+#################################################################
+
+publictrans:GroupOfLines rdf:type owl:Class ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:properPartOf ;
+          owl:allValuesFrom publictrans:PublicTransportSystem ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:hasProperPart ;
+          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass publictrans:Line
+        ] .
+publictrans:Line rdf:type owl:Class ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:properPartOf ;
+          owl:allValuesFrom publictrans:PublicTransportSystem ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:properPartOf ;
+          owl:allValuesFrom publictrans:GroupOfLines ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:hasProperPart ;
+          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass publictrans:Route
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty publictrans:allowedDirections ;
+          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass code:Code
+        ] .
+publictrans:PublicTransportSystem rdf:type owl:Class ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:hasProperPart ;
+          owl:allValuesFrom publictrans:Line ;
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:hasProperPart ;
+          owl:allValuesFrom publictrans:GroupOfLines ;
+        ] .
+publictrans:Route rdf:type owl:Class ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty partwhole:properPartOf ;
+          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass publictrans:Line
+        ] ,
+        [ rdf:type owl:Restriction ;
+          owl:onProperty publictrans:direction ;
+          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+          owl:onClass code:Code
+        ] .

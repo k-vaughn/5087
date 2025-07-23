@@ -1,0 +1,39 @@
+digraph {
+	graph [overlap=false splines=true]
+	node [fontname=Arial fontsize=12 shape=record]
+	edge [fontname=Arial fontsize=10]
+	subgraph cluster_main {
+		rankdir=TB style=invis
+		NetworkElement [label=NetworkElement]
+		transinfras_TravelledWaySegment [label="transinfras:TravelledWaySegment"]
+		{
+			rank=max
+			TravelledWaySegment [label="{TravelledWaySegment|}"]
+		}
+		TravelledWaySegment -> NetworkElement [arrowhead=onormal style=solid]
+		TravelledWaySegment -> transinfras_TravelledWaySegment [arrowhead=onormal style=solid]
+	}
+	subgraph cluster_others {
+		style=invis
+		TravelledWayLane [label=TravelledWayLane]
+		TravelledWayLink [label=TravelledWayLink]
+		TravelledWaySection [label=TravelledWaySection]
+		travelcorridor_TravelCorridorSegment [label="travelcorridor:TravelCorridorSegment"]
+	}
+	TravelledWaySegment:s -> travelcorridor_TravelCorridorSegment [label=travelCorridorSegment]
+	TravelledWaySegment:s -> TravelledWayLane [style=dashed, label="«allValuesFrom» (or «only»)\nonProperty: partwhole:hasProperPart", arrowhead=normal]
+	
+	// Union Node for the range refinement
+    Union [label="«unionOf»\n[TravelledWayLink or TravelledWaySection]", shape=ellipse, fillcolor=lightyellow];
+
+    // Union connections (dotted for membership)
+    Union -> TravelledWayLink [style=dotted, label="member", arrowhead=normal];
+    Union -> TravelledWaySection [style=dotted, label="member", arrowhead=normal];
+
+    // Range Refinement Restriction (dashed dependency to Union)
+    TravelledWaySegment -> Union [style=dashed, label="«allValuesFrom» (or «only»)\nonProperty: partwhole:properPartOf", arrowhead=normal];
+    TravelledWaySegment -> TravelledWayLink [style=dashed, label="«minQualifiedCardinality»\n1\nonProperty: partwhole:properPartOf", arrowhead=normal];
+
+    // New Min Qualified Cardinality Restriction for TravelledWayLanes
+    TravelledWaySegment -> TravelledWayLane [style=dashed, label="«minQualifiedCardinality»\n2\nonProperty: partwhole:hasProperPart", arrowhead=normal];
+}
