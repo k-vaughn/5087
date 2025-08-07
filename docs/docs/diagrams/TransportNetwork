@@ -1,0 +1,22 @@
+// Diagram for TransportNetwork
+digraph {
+	graph [overlap=false splines=true]
+	node [fontname=Arial fontsize=12 shape=record]
+	edge [fontname=Arial fontsize=10]
+	subgraph cluster_main {
+		rankdir=TB style=invis
+		NetworkElement [label=NetworkElement]
+		{
+			rank=max
+			TransportNetwork [label="{TransportNetwork|}"]
+		}
+		TransportNetwork -> NetworkElement [arrowhead=onormal style=solid]
+	}
+	TransportNetwork:s -> TravelledWaySection [label="partwhole:hasProperPart" arrowhead=normal headlabel="" style=dashed]
+	TransportNetwork:e -> TransportNetwork [label="partwhole:properPartOf" headlabel="" style=dashed]
+	subgraph cluster_others {
+		style=invis
+		TransportNetwork [label=TransportNetwork]
+		TravelledWaySection [label=TravelledWaySection]
+	}
+}

@@ -7,7 +7,7 @@ os.makedirs("docs/diagrams", exist_ok=True)
 
 # Load TTL ontology
 g = Graph()
-g.parse("transportnetwork-protoge.ttl", format="turtle")
+g.parse("transportnetwork.ttl", format="turtle")
 
 # Namespaces
 ns = "https://isotc204.org/25965/transport/transportnetwork#"
@@ -40,6 +40,16 @@ def get_id(qname):
         return prefix + '_' + local
     else:
         return qname
+
+def get_all_class_superclasses(cls, g):
+    direct_supers = set()
+    for super_cls in g.objects(cls, RDFS.subClassOf):
+        if (super_cls, RDF.type, OWL.Class) in g or str(super_cls).startswith(ns):
+            direct_supers.add(super_cls)
+    all_supers = set(direct_supers)
+    for sup in direct_supers:
+        all_supers.update(get_all_class_superclasses(sup, g))
+    return all_supers
 
 # Extract classes
 classes = set(g.subjects(RDF.type, OWL.Class)) - {OWL.Thing}
@@ -100,27 +110,8 @@ for cls in classes:
 
         attributes = "\\n".join(data_props) if data_props else ""
 
-        # Collect reflexive and associations
-        reflexive = []
-        associations = []  # list of (prop_name, target_qname)
-        for restriction in g.objects(cls, RDFS.subClassOf):
-            if (restriction, RDF.type, OWL.Restriction) in g:
-                prop = g.value(restriction, OWL.onProperty)
-                if prop and (prop, RDF.type, OWL.ObjectProperty) in g:
-                    target_cls = g.value(restriction, OWL.onClass) or g.value(restriction, OWL.allValuesFrom)
-                    if target_cls:
-                        prop_name = get_qname(prop)
-                        target_qname = get_qname(target_cls)
-                        if target_qname == cls_name:
-                            reflexive.append(prop_name)
-                        elif target_qname not in superclasses:
-                            associations.append((prop_name, target_qname))
-
-        # Sort reflexive
-        reflexive.sort()
-
-        # Unique and sorted association targets
-        assoc_targets = sorted(set(t for p, t in associations))
+        # Collect other classes for cluster_others
+        other_classes = set()
 
         # Create main cluster
         with dot.subgraph(name='cluster_main') as main_cluster:
@@ -137,31 +128,104 @@ for cls in classes:
             for sup in sorted(superclasses):
                 sup_id = get_id(sup)
                 main_cluster.edge(cls_id, sup_id, arrowhead="onormal", style="solid")
-            # Add reflexive edges
-            for i, prop_name in enumerate(reflexive):
-                if i == 0:
-                    tail_port = "e"
-                elif i == 1:
-                    tail_port = "w"
-                else:
-                    tail_port = "se"  # fallback for more
-                main_cluster.edge(f"{cls_id}:{tail_port}", cls_id, label=prop_name)
 
-        # Create others cluster
+        all_supers = get_all_class_superclasses(cls, g)
+
+        # Process object property restrictions
+        for restriction in g.objects(cls, RDFS.subClassOf):
+            if (restriction, RDF.type, OWL.Restriction) in g:
+                prop = g.value(restriction, OWL.onProperty)
+                if prop and (prop, RDF.type, OWL.ObjectProperty) in g:
+                    prop_name = get_qname(prop)
+
+                    is_inherited = any(
+                        any(
+                            g.value(rest, OWL.onProperty) == prop
+                            for rest in g.objects(sup, RDFS.subClassOf)
+                            if (rest, RDF.type, OWL.Restriction) in g
+                        )
+                        for sup in all_supers
+                    )
+                    style = "dashed" if is_inherited else "solid"
+
+                    # Handle cardinalities
+                    qualified_card = g.value(restriction, OWL.qualifiedCardinality)
+                    min_qualified_card = g.value(restriction, OWL.minQualifiedCardinality)
+                    max_qualified_card = g.value(restriction, OWL.maxQualifiedCardinality)
+                    on_class = g.value(restriction, OWL.onClass)
+                    if (qualified_card or min_qualified_card or max_qualified_card) and on_class:
+                        target_qname = get_qname(on_class)
+                        other_classes.add(target_qname)
+                        target_id = get_id(target_qname)
+                        if qualified_card:
+                            label = f"«qualifiedCardinality»\n{qualified_card}\nonProperty: {prop_name}"
+                        elif min_qualified_card and max_qualified_card:
+                            label = f"«cardinality»\n{min_qualified_card}..{max_qualified_card}\nonProperty: {prop_name}"
+                        elif min_qualified_card:
+                            label = f"«minQualifiedCardinality»\n{min_qualified_card}\nonProperty: {prop_name}"
+                        elif max_qualified_card:
+                            label = f"«maxQualifiedCardinality»\n{max_qualified_card}\nonProperty: {prop_name}"
+                        dot.edge(f"{cls_id}:s", target_id, label=label, style=style, arrowhead="normal")
+
+                    # Handle universal (allValuesFrom -> only)
+                    all_values_from = g.value(restriction, OWL.allValuesFrom)
+                    if all_values_from:
+                        target = all_values_from
+                        union_collection = g.value(target, OWL.unionOf)
+                        if union_collection and union_collection != RDF.nil:
+                            members = []
+                            current = union_collection
+                            while current != RDF.nil:
+                                first = g.value(current, RDF.first)
+                                if first:
+                                    members.append(get_qname(first))
+                                current = g.value(current, RDF.rest)
+                            if members:
+                                members.sort()
+                                union_label = "«unionOf»\\n[" + " or ".join(members) + "]"
+                                union_id = "Union"
+                                dot.node(union_id, union_label, shape="ellipse", fillcolor="lightyellow")
+                                for member in members:
+                                    other_classes.add(member)
+                                    m_id = get_id(member)
+                                    dot.edge(union_id, m_id, style="dotted", label="member", arrowhead="normal")
+                                label = f"«only» onProperty:\n{prop_name}"
+                                dot.edge(f"{cls_id}:s", union_id, label=label, style=style, arrowhead="normal")
+                        else:
+                            target_qname = get_qname(target)
+                            if target_qname != cls_name:
+                                other_classes.add(target_qname)
+                                target_id = get_id(target_qname)
+                                label = f"«only» onProperty:\n{prop_name}"
+                                dot.edge(f"{cls_id}:s", target_id, label=label, style=style, arrowhead="normal")
+                            else:
+                                # reflexive
+                                dot.edge(f"{cls_id}:e", cls_id, label=prop_name, style=style)
+
+                    # Handle existential (someValuesFrom)
+                    some_values_from = g.value(restriction, OWL.someValuesFrom)
+                    if some_values_from:
+                        target = some_values_from
+                        target_qname = get_qname(target)
+                        if target_qname != cls_name:
+                            other_classes.add(target_qname)
+                            target_id = get_id(target_qname)
+                            label = f"«some» onProperty:\n{prop_name}"
+                            dot.edge(f"{cls_id}:s", target_id, label=label, style=style, arrowhead="normal")
+                        else:
+                            # reflexive
+                            dot.edge(f"{cls_id}:e", cls_id, label=prop_name, style=style)
+
+        # Create others cluster with collected classes
         with dot.subgraph(name='cluster_others') as others_cluster:
             others_cluster.attr(style='invis')
-            for target in assoc_targets:
+            for target in sorted(other_classes):
                 target_id = get_id(target)
                 others_cluster.node(target_id, label=target)
 
-        # Add association edges
-        for prop_name, target_qname in associations:
-            target_id = get_id(target_qname)
-            dot.edge(f"{cls_id}:s", target_id, label=prop_name)
-
         # Save DOT file and render SVG
-        dot_file = f"docs/diagrams/{cls_name}.dot"
-        stem = f"docs/diagrams/{cls_name}"
+        dot_file = f"diagrams/{cls_name}.dot"
+        stem = f"diagrams/{cls_name}"
         dot.save(dot_file)
         dot.render(stem, cleanup=False)
         # Render PNG

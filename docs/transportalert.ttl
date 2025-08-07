@@ -16,7 +16,7 @@ owl:imports
     <https://www.w3.org/2006/time> ,
     <https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/code> ,
     <https://isotc204.org/25965/transport/transportalert> ,
-    <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology//activity> ,
+    <https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/activity> ,
     <https://www.opengis.net/ont/geosparql> ,
     <https://isotc204.org/25965/transport/transportnetwork> .
 

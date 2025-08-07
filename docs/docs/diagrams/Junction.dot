@@ -1,0 +1,18 @@
+// Diagram for Junction
+digraph {
+	graph [overlap=false splines=true]
+	node [fontname=Arial fontsize=12 shape=record]
+	edge [fontname=Arial fontsize=10]
+	subgraph cluster_main {
+		rankdir=TB style=invis
+		TransportNode [label=TransportNode]
+		{
+			rank=max
+			Junction [label="{Junction|}"]
+		}
+		Junction -> TransportNode [arrowhead=onormal style=solid]
+	}
+	subgraph cluster_others {
+		style=invis
+	}
+}

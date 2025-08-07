@@ -1,0 +1,22 @@
+// Diagram for TravelledWay
+digraph {
+	graph [overlap=false splines=true]
+	node [fontname=Arial fontsize=12 shape=record]
+	edge [fontname=Arial fontsize=10]
+	subgraph cluster_main {
+		rankdir=TB style=invis
+		NetworkElement [label=NetworkElement]
+		{
+			rank=max
+			TravelledWay [label="{TravelledWay|designator: string [1]}"]
+		}
+		TravelledWay -> NetworkElement [arrowhead=onormal style=solid]
+	}
+	TravelledWay:s -> TravelledWayLink [label="partwhole:hasProperPart" arrowhead=normal headlabel="" style=dashed]
+	TravelledWay:s -> TransportNetwork [label="partwhole:properPartOf" arrowhead=normal headlabel="1..*" style=dashed]
+	subgraph cluster_others {
+		style=invis
+		TransportNetwork [label=TransportNetwork]
+		TravelledWayLink [label=TravelledWayLink]
+	}
+}

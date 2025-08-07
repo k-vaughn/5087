@@ -1,0 +1,42 @@
+// Diagram for Alert
+digraph {
+	graph [overlap=false rankdir=TB splines=true]
+	node [fontname=Arial fontsize=12 margin=0 shape=none]
+	edge [fontname=Arial fontsize=10]
+	ITSThing [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>ITSThing</B></TD></TR></TABLE>> margin=0]
+	{
+		rank=max
+		Alert [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER" PORT="e"><B>Alert</B></TD></TR><TR><TD ALIGN="LEFT">genProp:hasDescription: string «exactly 1, only»</TD></TR><TR><TD ALIGN="LEFT">headline: string «exactly 1, only»</TD></TR><TR><TD ALIGN="LEFT">issuer: nonNegativeInteger «exactly 1, only»</TD></TR><TR><TD ALIGN="LEFT">resources: string «only»</TD></TR><TR><TD ALIGN="LEFT">website: anyURI «exactly 1, only»</TD></TR></TABLE>> margin=0]
+	}
+	subgraph cluster_associated {
+		label="" style=invis
+		Invis [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD></TD></TR></TABLE>> margin=0 style=invis]
+		activity_Activity [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>activity:Activity</B></TD></TR></TABLE>> margin=0]
+		code_Code [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>code:Code</B></TD></TR></TABLE>> margin=0]
+		geo_Geometry [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>geo:Geometry</B></TD></TR></TABLE>> margin=0]
+		time_Instant [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>time:Instant</B></TD></TR></TABLE>> margin=0]
+	}
+	Alert -> ITSThing [arrowhead=onormal style=solid]
+	Alert -> Invis [style=invis]
+	Invis -> activity_Activity [style=invis]
+	activity_Activity -> code_Code [style=invis]
+	code_Code -> geo_Geometry [style=invis]
+	geo_Geometry -> time_Instant [style=invis]
+	Alert -> activity_Activity [label="«only»\nonProperty: activities" arrowhead=normal style=solid]
+	Alert -> time_Instant [label="«max 1, only»\nonProperty: beginTime" arrowhead=normal style=solid]
+	Alert -> code_Code [label="«exactly 1, only»\nonProperty: category" arrowhead=normal style=solid]
+	Alert -> code_Code [label="«only»\nonProperty: cause" arrowhead=normal style=solid]
+	Alert -> code_Code [label="«max 1, only»\nonProperty: certainty" arrowhead=normal style=solid]
+	Alert -> time_Instant [label="«exactly 1, only»\nonProperty: creationTime" arrowhead=normal style=solid]
+	Alert -> code_Code [label="«exactly 1, only»\nonProperty: distribution" arrowhead=normal style=solid]
+	Alert -> code_Code [label="«only»\nonProperty: effect" arrowhead=normal style=solid]
+	Alert -> time_Instant [label="«max 1, only»\nonProperty: endTime" arrowhead=normal style=solid]
+	Alert -> time_Instant [label="«exactly 1, only»\nonProperty: expiryTime" arrowhead=normal style=solid]
+	Alert -> time_Instant [label="«exactly 1, only»\nonProperty: lastUpdateTime" arrowhead=normal style=solid]
+	Alert -> geo_Geometry [label="«only»\nonProperty: location" arrowhead=normal style=solid]
+	Alert -> code_Code [label="«only»\nonProperty: recommendation" arrowhead=normal style=solid]
+	Alert -> Alert [label="«only»\nonProperty: referencedAlert" style=solid]
+	Alert -> code_Code [label="«max 1, only»\nonProperty: severity" arrowhead=normal style=solid]
+	Alert -> code_Code [label="«exactly 1, only»\nonProperty: status" arrowhead=normal style=solid]
+	Alert -> code_Code [label="«max 1, only»\nonProperty: urgency" arrowhead=normal style=solid]
+}

@@ -1,0 +1,27 @@
+// Diagram for TravelledWayLink
+digraph {
+	graph [overlap=false splines=true]
+	node [fontname=Arial fontsize=12 shape=record]
+	edge [fontname=Arial fontsize=10]
+	subgraph cluster_main {
+		rankdir=TB style=invis
+		NetworkElement [label=NetworkElement]
+		{
+			rank=max
+			TravelledWayLink [label="{TravelledWayLink|}"]
+		}
+		TravelledWayLink -> NetworkElement [arrowhead=onormal style=solid]
+	}
+	TravelledWayLink:s -> TravelledWaySection [label="partwhole:properPartOf" arrowhead=normal headlabel="1..*" style=dashed]
+	TravelledWayLink:s -> TransportNode [label=from arrowhead=normal headlabel="1..1" style=solid]
+	TravelledWayLink:s -> TransportNode [label=to arrowhead=normal headlabel="1..1" style=solid]
+	TravelledWayLink:s -> TravelledWaySegment [label="partwhole:hasProperPart" arrowhead=normal headlabel="" style=dashed]
+	TravelledWayLink:s -> code_Code [label=allowedDirections arrowhead=normal headlabel="0..1" style=solid]
+	subgraph cluster_others {
+		style=invis
+		TransportNode [label=TransportNode]
+		TravelledWaySection [label=TravelledWaySection]
+		TravelledWaySegment [label=TravelledWaySegment]
+		code_Code [label="code:Code"]
+	}
+}

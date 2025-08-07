@@ -1,28 +1,34 @@
 // Diagram for TravelledWaySegment
 digraph {
-	graph [overlap=false splines=true]
-	node [fontname=Arial fontsize=12 shape=record]
+	graph [overlap=false rankdir=TB splines=true]
+	node [fontname=Arial fontsize=12 margin=0 shape=none]
 	edge [fontname=Arial fontsize=10]
-	subgraph cluster_main {
-		rankdir=TB style=invis
-		NetworkElement [label=NetworkElement]
-		transinfras_TravelledWaySegment [label="transinfras:TravelledWaySegment"]
-		{
-			rank=max
-			TravelledWaySegment [label="{TravelledWaySegment|}"]
-		}
-		TravelledWaySegment -> NetworkElement [arrowhead=onormal style=solid]
-		TravelledWaySegment -> transinfras_TravelledWaySegment [arrowhead=onormal style=solid]
+	NetworkElement [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>NetworkElement</B></TD></TR></TABLE>> margin=0]
+	transinfras_TravelledWaySegment [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>transinfras:TravelledWaySegment</B></TD></TR></TABLE>> margin=0]
+	{
+		rank=max
+		TravelledWaySegment [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER" PORT="e"><B>TravelledWaySegment</B></TD></TR></TABLE>> margin=0]
 	}
-	subgraph cluster_others {
-		style=invis
-		TravelledWayLane [label=TravelledWayLane]
-		TravelledWayLink [label=TravelledWayLink]
-		TravelledWaySection [label=TravelledWaySection]
-		travelcorridor_TravelCorridorSegment [label="travelcorridor:TravelCorridorSegment"]
+	subgraph cluster_associated {
+		label="" style=invis
+		Invis [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD></TD></TR></TABLE>> margin=0 style=invis]
+		TravelCorridorSegment [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>TravelCorridorSegment</B></TD></TR></TABLE>> margin=0]
+		TravelledWayLane [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>TravelledWayLane</B></TD></TR></TABLE>> margin=0]
+		TravelledWayLink [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>TravelledWayLink</B></TD></TR></TABLE>> margin=0]
+		TravelledWaySection [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>TravelledWaySection</B></TD></TR></TABLE>> margin=0]
 	}
-	TravelledWaySegment:s -> travelcorridor_TravelCorridorSegment [label=travelCorridorSegment]
-	TravelledWaySegment:s -> TravelledWaySection [label="partwhole:properPartOf"]
-	TravelledWaySegment:s -> TravelledWayLane [label="partwhole:hasProperPart"]
-	TravelledWaySegment:s -> TravelledWayLink [label="partwhole:properPartOf"]
+	TravelledWaySegment -> NetworkElement [arrowhead=onormal style=solid]
+	TravelledWaySegment -> transinfras_TravelledWaySegment [arrowhead=onormal style=solid]
+	TravelledWaySegment -> Invis [style=invis]
+	Invis -> TravelCorridorSegment [style=invis]
+	TravelCorridorSegment -> TravelledWayLane [style=invis]
+	TravelledWayLane -> TravelledWayLink [style=invis]
+	TravelledWayLink -> TravelledWaySection [style=invis]
+	TravelledWaySegment -> TravelCorridorSegment [label="«only»\nonProperty: travelCorridorSegment" arrowhead=normal style=solid]
+	TravelledWaySegment -> TravelledWayLane [label="«min 1, only»\nonProperty: partwhole:hasProperPart" arrowhead=normal style=dashed]
+	Union_partwhole_properPartOf [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1" BGCOLOR="lightyellow"><TR><TD ALIGN="CENTER">«unionOf»<BR/>[TravelledWayLink or TravelledWaySection]</TD></TR></TABLE>> margin=0]
+	Union_partwhole_properPartOf -> TravelledWayLink [label=member arrowhead=normal style=dotted]
+	Union_partwhole_properPartOf -> TravelledWaySection [label=member arrowhead=normal style=dotted]
+	TravelledWaySegment -> Union_partwhole_properPartOf [label="«only»\nonProperty: partwhole:properPartOf" arrowhead=normal style=dashed]
+	TravelledWaySegment -> TravelledWayLink [label="«min 1»\nonProperty: partwhole:properPartOf" arrowhead=normal style=dashed]
 }

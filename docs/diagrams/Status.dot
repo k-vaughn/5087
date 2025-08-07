@@ -1,16 +1,23 @@
 // Diagram for Status
 digraph {
-	graph [overlap=false splines=true]
-	node [fontname=Arial fontsize=12 shape=record]
+	graph [overlap=false rankdir=TB splines=true]
+	node [fontname=Arial fontsize=12 margin=0 shape=none]
 	edge [fontname=Arial fontsize=10]
-	subgraph cluster_main {
-		rankdir=TB style=invis
-		{
-			rank=max
-			Status [label="{Status|}"]
-		}
+	ITSThing [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>ITSThing</B></TD></TR></TABLE>> margin=0]
+	{
+		rank=max
+		Status [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER" PORT="e"><B>Status</B></TD></TR></TABLE>> margin=0]
 	}
-	subgraph cluster_others {
-		style=invis
+	subgraph cluster_associated {
+		label="" style=invis
+		Invis [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD></TD></TR></TABLE>> margin=0 style=invis]
+		code_Code [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>code:Code</B></TD></TR></TABLE>> margin=0]
+		time_DateTimeInterval [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>time:DateTimeInterval</B></TD></TR></TABLE>> margin=0]
 	}
+	Status -> ITSThing [arrowhead=onormal style=solid]
+	Status -> Invis [style=invis]
+	Invis -> code_Code [style=invis]
+	code_Code -> time_DateTimeInterval [style=invis]
+	Status -> code_Code [label="«only»\nonProperty: code" arrowhead=normal style=solid]
+	Status -> time_DateTimeInterval [label="«exactly 1, only»\nonProperty: timeInterval" arrowhead=normal style=solid]
 }

@@ -21,19 +21,15 @@ digraph {
 		travelcorridor_TravelCorridorSegment [label="travelcorridor:TravelCorridorSegment"]
 	}
 	TravelledWaySegment:s -> travelcorridor_TravelCorridorSegment [label=travelCorridorSegment]
-	TravelledWaySegment:s -> TravelledWayLane [style=dashed, label="«allValuesFrom» (or «only»)\nonProperty: partwhole:hasProperPart", arrowhead=normal]
+	TravelledWaySegment:s -> TravelledWayLane [style=dashed, label="«only» onProperty:\npartwhole:hasProperPart", arrowhead=normal headlabel="1..*"]
 	
 	// Union Node for the range refinement
     Union [label="«unionOf»\n[TravelledWayLink or TravelledWaySection]", shape=ellipse, fillcolor=lightyellow];
 
     // Union connections (dotted for membership)
-    Union -> TravelledWayLink [style=dotted, label="member", arrowhead=normal];
+    Union -> TravelledWayLink [style=dotted, label="member", arrowhead=normal headlabel="1..*"];
     Union -> TravelledWaySection [style=dotted, label="member", arrowhead=normal];
 
     // Range Refinement Restriction (dashed dependency to Union)
-    TravelledWaySegment -> Union [style=dashed, label="«allValuesFrom» (or «only»)\nonProperty: partwhole:properPartOf", arrowhead=normal];
-    TravelledWaySegment -> TravelledWayLink [style=dashed, label="«minQualifiedCardinality»\n1\nonProperty: partwhole:properPartOf", arrowhead=normal];
-
-    // New Min Qualified Cardinality Restriction for TravelledWayLanes
-    TravelledWaySegment -> TravelledWayLane [style=dashed, label="«minQualifiedCardinality»\n2\nonProperty: partwhole:hasProperPart", arrowhead=normal];
+    TravelledWaySegment -> Union [style=dashed, label="«only» onProperty:\npartwhole:properPartOf", arrowhead=normal];
 }
