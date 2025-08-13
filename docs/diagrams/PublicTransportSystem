@@ -12,14 +12,14 @@ digraph {
 		label="" style=invis
 		Invis [label=<<TABLE BORDER="0" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD></TD></TR></TABLE>> margin=0 style=invis]
 		GroupOfLines [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>GroupOfLines</B></TD></TR></TABLE>> margin=0]
-		Line [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>Line</B></TD></TR></TABLE>> margin=0]
+		PublicTransportLine [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>PublicTransportLine</B></TD></TR></TABLE>> margin=0]
 	}
 	PublicTransportSystem -> ITSThing [arrowhead=onormal style=solid]
 	PublicTransportSystem -> Invis [style=invis]
 	Invis -> GroupOfLines [style=invis]
-	GroupOfLines -> Line [style=invis]
-	Union_partwhole_hasProperPart [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1" BGCOLOR="lightyellow"><TR><TD ALIGN="CENTER">«unionOf»<BR/>[GroupOfLines or Line]</TD></TR></TABLE>> margin=0]
+	GroupOfLines -> PublicTransportLine [style=invis]
+	Union_partwhole_hasProperPart [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1" BGCOLOR="lightyellow"><TR><TD ALIGN="CENTER">«unionOf»<BR/>[GroupOfLines or PublicTransportLine]</TD></TR></TABLE>> margin=0]
 	Union_partwhole_hasProperPart -> GroupOfLines [label=member arrowhead=normal style=dotted]
-	Union_partwhole_hasProperPart -> Line [label=member arrowhead=normal style=dotted]
+	Union_partwhole_hasProperPart -> PublicTransportLine [label=member arrowhead=normal style=dotted]
 	PublicTransportSystem -> Union_partwhole_hasProperPart [label="«only»\nonProperty: partwhole:hasProperPart" arrowhead=normal style=solid]
 }

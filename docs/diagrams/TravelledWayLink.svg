@@ -15,7 +15,7 @@
 <g id="node1" class="node">
 <title>NetworkElement</title>
 <polygon fill="lightgray" stroke="none" points="352.62,-616.88 352.62,-633.12 448.38,-633.12 448.38,-616.88 352.62,-616.88"/>
-<text xml:space="preserve" text-anchor="start" x="353.62" y="-621.73" font-family="Arial" font-weight="bold" font-size="12.00">NetworkElement</text>
+<text xml:space="preserve" text-anchor="start" x="353.62" y="-621.73" font-family="Arial" font-weight="bold" font-style="italic" font-size="12.00">NetworkElement</text>
 <polygon fill="none" stroke="black" points="351.62,-615.88 351.62,-634.12 449.38,-634.12 449.38,-615.88 351.62,-615.88"/>
 </g>
 <!-- transinfras_TravelledWayLink -->

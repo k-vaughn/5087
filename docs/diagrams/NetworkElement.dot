@@ -7,7 +7,7 @@ digraph {
 	geo_Feature [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>geo:Feature</B></TD></TR></TABLE>> margin=0]
 	{
 		rank=max
-		NetworkElement [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER" PORT="e"><B>NetworkElement</B></TD></TR><TR><TD ALIGN="LEFT">genProp:hasIdentifier: string «exactly 1, only»</TD></TR></TABLE>> margin=0]
+		NetworkElement [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER" PORT="e"><B><I>NetworkElement</I></B></TD></TR><TR><TD ALIGN="LEFT">genProp:hasIdentifier: string «exactly 1, only»</TD></TR></TABLE>> margin=0]
 	}
 	subgraph cluster_associated {
 		label="" style=invis

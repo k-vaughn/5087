@@ -3,6 +3,20 @@ from graphviz import Digraph
 import os
 from funowl.converters.functional_converter import to_python
 from collections import defaultdict
+from rdflib import URIRef, Literal, XSD, Namespace
+# import logging
+
+# Set up logging
+# logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+# logger = logging.getLogger(__name__)
+
+# Namespaces
+ns = "https://isotc204.org/25965/transport/transportnetwork#"
+protege_ns = Namespace("http://protege.stanford.edu/ontologies/metadata#")
+rdf_ns = Namespace("http://www.w3.org/1999/02/22-rdf-syntax-ns#")
+owl_ns = Namespace("http://www.w3.org/2002/07/owl#")
+dcterms_ns = Namespace("http://purl.org/dc/terms/")
+
 
 # Ensure output directory exists
 os.makedirs("diagrams", exist_ok=True)
@@ -49,6 +63,11 @@ def get_qname(uri):
     print(f"Warning: No prefix found for URI: {str_uri}")
     return str_uri
 
+def is_abstract(cls, g):
+    """Check if the class has protege:abstract annotation set to true."""
+    abstract = g.value(cls, protege_ns.abstract)
+    return abstract is not None and str(abstract).lower() == "true"
+
 def get_id(qname):
     if ':' in qname:
         prefix, local = qname.split(':', 1)
@@ -71,11 +90,46 @@ classes = set(g.subjects(RDF.type, OWL.Class)) - {OWL.Thing}
 
 processed_count = 0
 errors = []
+# Build abstract_map: keys are class names, values are is_abstract(cls, g)
+abstract_map = {}
 
 for cls in classes:
-    # Extract class name
     cls_str = str(cls)
     if cls_str.startswith(ns):
+        cls_name = get_qname(cls)
+        abstract_map[cls_name] = is_abstract(cls, g)
+        # logger.debug(f"Added {cls_name} to map with abstract status: {abstract_map[cls_name]}")
+    else:
+        continue  # Skip non-local classes
+
+for name, is_abs in abstract_map.items():
+    print(f"{name}: {is_abs}")
+
+# Helper function for formatting class titles
+def fmt_title(name: str) -> str:
+    """Return HTML-like label for a class name: bold; italic if abstract."""
+    return f"<B><I>{name}</I></B>" if abstract_map.get(name, False) else f"<B>{name}</B>"
+
+# --- New helper and constant for skipping ITSPatternThing and its subclasses ---
+from rdflib import URIRef
+
+PATTERN_CLS = URIRef(ns + "ITSPatternThing")
+def is_descendant_of(cls_uri, ancestor_uri, g):
+    """Return True if cls_uri == ancestor_uri or cls_uri is a (transitive) subclass of ancestor_uri."""
+    if cls_uri == ancestor_uri:
+        return True
+    # Reuse existing superclass traversal
+    try:
+        return ancestor_uri in get_all_class_superclasses(cls_uri, g)
+    except RecursionError:
+        return False
+
+for cls in classes:    # Extract class name
+    cls_str = str(cls)
+    if cls_str.startswith(ns):
+        # Skip ITSPatternThing and any of its subclasses from output generation
+        if is_descendant_of(cls, PATTERN_CLS, g):
+            continue
         cls_name = get_qname(cls)
         cls_id = get_id(cls_name)
     else:
@@ -102,8 +156,8 @@ for cls in classes:
                 superclasses.add(get_qname(super_cls))
         for sup in sorted(superclasses):
             sup_id = get_id(sup)
-            dot.node(sup_id, label=f'<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>{sup}</B></TD></TR></TABLE>>', margin="0")
-
+            dot.node(sup_id, label=f'<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER">{fmt_title(sup)}</TD></TR></TABLE>>', margin="0")
+            
         # 3. Define the main class in its own group with a rank=max statement
         with dot.subgraph() as main_group:
             main_group.attr(rank='max')
@@ -153,7 +207,7 @@ for cls in classes:
                 attributes.append(attribute)
 
             attributes_html = "".join(f'<TR><TD ALIGN="LEFT">{prop}</TD></TR>' for prop in attributes)
-            main_label = f'<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER" PORT="e"><B>{cls_name}</B></TD></TR>{attributes_html}</TABLE>>'
+            main_label = f'<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER" PORT="e">{fmt_title(cls_name)}</TD></TR>{attributes_html}</TABLE>>'
             main_group.node(cls_id, main_label, margin="0")
 
         # 4. Define subgraph containing all of the associated classes with an invisible box
@@ -199,8 +253,8 @@ for cls in classes:
             # 6. Add associated classes
             for assoc in sorted(associated_classes):
                 assoc_id = get_id(assoc)
-                associated_cluster.node(assoc_id, label=f'<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>{assoc}</B></TD></TR></TABLE>>', margin="0")
-
+                associated_cluster.node(assoc_id, label=f'<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER">{fmt_title(assoc)}</TD></TR></TABLE>>', margin="0")
+                
         # 7. Define the generalization relationships
         for sup in sorted(superclasses):
             sup_id = get_id(sup)

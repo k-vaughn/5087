@@ -6,7 +6,7 @@ digraph {
 	ITSThing [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER"><B>ITSThing</B></TD></TR></TABLE>> margin=0]
 	{
 		rank=max
-		Alert [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER" PORT="e"><B>Alert</B></TD></TR><TR><TD ALIGN="LEFT">genProp:hasDescription: string «exactly 1, only»</TD></TR><TR><TD ALIGN="LEFT">headline: string «exactly 1, only»</TD></TR><TR><TD ALIGN="LEFT">issuer: nonNegativeInteger «exactly 1, only»</TD></TR><TR><TD ALIGN="LEFT">resources: string «only»</TD></TR><TR><TD ALIGN="LEFT">website: anyURI «exactly 1, only»</TD></TR></TABLE>> margin=0]
+		Alert [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="1"><TR><TD BGCOLOR="lightgray" ALIGN="CENTER" PORT="e"><B>Alert</B></TD></TR><TR><TD ALIGN="LEFT">genProp:hasDescription: string «exactly 1, only»</TD></TR><TR><TD ALIGN="LEFT">headline: string «exactly 1, only»</TD></TR><TR><TD ALIGN="LEFT">issuer: nonNegativeInteger «exactly 1, only»</TD></TR><TR><TD ALIGN="LEFT">resources: string «only»</TD></TR><TR><TD ALIGN="LEFT">website: anyURI «only»</TD></TR></TABLE>> margin=0]
 	}
 	subgraph cluster_associated {
 		label="" style=invis
@@ -31,7 +31,7 @@ digraph {
 	Alert -> code_Code [label="«exactly 1, only»\nonProperty: distribution" arrowhead=normal style=solid]
 	Alert -> code_Code [label="«only»\nonProperty: effect" arrowhead=normal style=solid]
 	Alert -> time_Instant [label="«max 1, only»\nonProperty: endTime" arrowhead=normal style=solid]
-	Alert -> time_Instant [label="«exactly 1, only»\nonProperty: expiryTime" arrowhead=normal style=solid]
+	Alert -> time_Instant [label="«only»\nonProperty: expiryTime" arrowhead=normal style=solid]
 	Alert -> time_Instant [label="«exactly 1, only»\nonProperty: lastUpdateTime" arrowhead=normal style=solid]
 	Alert -> geo_Geometry [label="«only»\nonProperty: location" arrowhead=normal style=solid]
 	Alert -> code_Code [label="«only»\nonProperty: recommendation" arrowhead=normal style=solid]

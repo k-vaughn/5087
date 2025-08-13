@@ -29,7 +29,7 @@
 <g id="node3" class="node">
 <title>NetworkElement</title>
 <polygon fill="lightgray" stroke="none" points="1,-130 1,-146.25 244.5,-146.25 244.5,-130 1,-130"/>
-<text xml:space="preserve" text-anchor="start" x="75.88" y="-134.85" font-family="Arial" font-weight="bold" font-size="12.00">NetworkElement</text>
+<text xml:space="preserve" text-anchor="start" x="75.88" y="-134.85" font-family="Arial" font-weight="bold" font-style="italic" font-size="12.00">NetworkElement</text>
 <text xml:space="preserve" text-anchor="start" x="2" y="-117.6" font-family="Arial" font-size="12.00">genProp:hasIdentifier: string «exactly 1, only»</text>
 <polygon fill="none" stroke="black" points="0,-112.75 0,-147.25 245.5,-147.25 245.5,-112.75 0,-112.75"/>
 </g>

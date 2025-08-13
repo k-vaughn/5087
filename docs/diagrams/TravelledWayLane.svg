@@ -15,7 +15,7 @@
 <g id="node1" class="node">
 <title>NetworkElement</title>
 <polygon fill="lightgray" stroke="none" points="6.62,-194.88 6.62,-211.12 102.38,-211.12 102.38,-194.88 6.62,-194.88"/>
-<text xml:space="preserve" text-anchor="start" x="7.62" y="-199.72" font-family="Arial" font-weight="bold" font-size="12.00">NetworkElement</text>
+<text xml:space="preserve" text-anchor="start" x="7.62" y="-199.72" font-family="Arial" font-weight="bold" font-style="italic" font-size="12.00">NetworkElement</text>
 <polygon fill="none" stroke="black" points="5.62,-193.88 5.62,-212.12 103.38,-212.12 103.38,-193.88 5.62,-193.88"/>
 </g>
 <!-- TravelledWayLane -->

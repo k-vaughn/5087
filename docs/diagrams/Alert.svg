@@ -27,7 +27,7 @@
 <text xml:space="preserve" text-anchor="start" x="796.75" y="-407.6" font-family="Arial" font-size="12.00">headline: string «exactly 1, only»</text>
 <text xml:space="preserve" text-anchor="start" x="796.75" y="-391.35" font-family="Arial" font-size="12.00">issuer: nonNegativeInteger «exactly 1, only»</text>
 <text xml:space="preserve" text-anchor="start" x="796.75" y="-375.1" font-family="Arial" font-size="12.00">resources: string «only»</text>
-<text xml:space="preserve" text-anchor="start" x="796.75" y="-358.85" font-family="Arial" font-size="12.00">website: anyURI «exactly 1, only»</text>
+<text xml:space="preserve" text-anchor="start" x="796.75" y="-358.85" font-family="Arial" font-size="12.00">website: anyURI «only»</text>
 <polygon fill="none" stroke="black" points="794.75,-354 794.75,-453.5 1055.25,-453.5 1055.25,-354 794.75,-354"/>
 </g>
 <!-- Alert&#45;&gt;ITSThing -->
@@ -191,7 +191,7 @@
 <title>Alert&#45;&gt;time_Instant</title>
 <path fill="none" stroke="black" d="M1055.13,-392.58C1258.84,-374.89 1630,-334.73 1630,-277 1630,-277 1630,-277 1630,-106 1630,-104.54 1403.07,-71.31 1388,-70 1134.1,-48 323.47,-37.76 119.78,-35.49"/>
 <polygon fill="black" stroke="black" points="119.89,-31.99 109.85,-35.38 119.82,-38.99 119.89,-31.99"/>
-<text xml:space="preserve" text-anchor="middle" x="1680.62" y="-182.5" font-family="Arial" font-size="10.00">«exactly 1, only»</text>
+<text xml:space="preserve" text-anchor="middle" x="1680.62" y="-182.5" font-family="Arial" font-size="10.00">«only»</text>
 <text xml:space="preserve" text-anchor="middle" x="1680.62" y="-170.5" font-family="Arial" font-size="10.00">onProperty: expiryTime</text>
 </g>
 <!-- Alert&#45;&gt;time_Instant -->

@@ -45,7 +45,7 @@
 <title>RoadLinkUserType&#45;&gt;RoadLink</title>
 <path fill="none" stroke="black" d="M137.88,-354.95C136.58,-354.63 135.28,-354.31 134,-354 95.52,-344.68 71.95,-366.54 46.75,-336 39.76,-327.53 38.49,-315.8 39.38,-305.04"/>
 <polygon fill="black" stroke="black" points="42.8,-305.83 40.8,-295.43 35.88,-304.81 42.8,-305.83"/>
-<text xml:space="preserve" text-anchor="middle" x="83.88" y="-326.5" font-family="Arial" font-size="10.00">«min 1, only»</text>
+<text xml:space="preserve" text-anchor="middle" x="83.88" y="-326.5" font-family="Arial" font-size="10.00">«only»</text>
 <text xml:space="preserve" text-anchor="middle" x="83.88" y="-314.5" font-family="Arial" font-size="10.00">onProperty: uses</text>
 </g>
 <!-- cityunits_Duration -->
