@@ -14,4 +14,4 @@ A Footpath Link is a type of TravelledWayLink designed for pedestrians.
 
 ## Pattern
 
-This class is a part of the [PedestrianNetworkPattern](PedestrianNetworkPattern.md) pattern.
+This class is a part of the [PedestrianNetworkPattern](../PedestrianNetworkPattern.md) pattern.

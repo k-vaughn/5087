@@ -20,4 +20,4 @@ A NetworkElement represents any element of a transport network. It can be a part
 
 ## Pattern
 
-This class is a part of the [TransportNetworkPattern](TransportNetworkPattern.md) pattern.
+This class is a part of the [TransportNetworkPattern](../TransportNetworkPattern.md) pattern.

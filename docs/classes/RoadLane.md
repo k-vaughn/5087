@@ -17,4 +17,4 @@ A RoadLane is a type of TravelledWayLane that forms part of a RoadSegment.
 
 ## Pattern
 
-This class is a part of the [RoadNetworkPattern](RoadNetworkPattern.md) pattern.
+This class is a part of the [RoadNetworkPattern](../RoadNetworkPattern.md) pattern.

@@ -14,4 +14,4 @@ A MicromobilityPath is a type of Road that is made up of MicromobilityPathLinks.
 
 ## Pattern
 
-This class is a part of the [MicromobilityNetworkPattern](MicromobilityNetworkPattern.md) pattern.
+This class is a part of the [MicromobilityNetworkPattern](../MicromobilityNetworkPattern.md) pattern.

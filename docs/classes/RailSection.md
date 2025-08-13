@@ -13,4 +13,4 @@ A RailSection is a type of TravelledWaySection that groups TrackLinks and TrackS
 
 ## Pattern
 
-This class is a part of the [RailNetworkPattern](RailNetworkPattern.md) pattern.
+This class is a part of the [RailNetworkPattern](../RailNetworkPattern.md) pattern.

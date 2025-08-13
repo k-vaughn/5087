@@ -13,4 +13,4 @@ A TrackSegment is a type of TravelledWaySegment that represents a portion of a T
 
 ## Pattern
 
-This class is a part of the [RailNetworkPattern](RailNetworkPattern.md) pattern.
+This class is a part of the [RailNetworkPattern](../RailNetworkPattern.md) pattern.

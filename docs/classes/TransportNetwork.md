@@ -13,4 +13,4 @@ A TransportNetwork is a NetworkElement that is a collection of other network ele
 
 ## Pattern
 
-This class is a part of the [TransportNetworkPattern](TransportNetworkPattern.md) pattern.
+This class is a part of the [TransportNetworkPattern](../TransportNetworkPattern.md) pattern.

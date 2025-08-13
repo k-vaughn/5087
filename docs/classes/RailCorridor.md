@@ -14,4 +14,4 @@ A RailCorridor is a type of TravelledWay that is made up of TrackLinks.
 
 ## Pattern
 
-This class is a part of the [RailNetworkPattern](RailNetworkPattern.md) pattern.
+This class is a part of the [RailNetworkPattern](../RailNetworkPattern.md) pattern.

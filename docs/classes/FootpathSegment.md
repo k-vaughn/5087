@@ -17,4 +17,4 @@ NOTE: A FootpathSegment can be defined to be a part of a FootpathSection, especi
 
 ## Pattern
 
-This class is a part of the [PedestrianNetworkPattern](PedestrianNetworkPattern.md) pattern.
+This class is a part of the [PedestrianNetworkPattern](../PedestrianNetworkPattern.md) pattern.

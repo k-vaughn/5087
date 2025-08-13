@@ -20,4 +20,4 @@ A TravelledWayLink is a type of NetworkElement and transinfras:TravelledWayLink.
 
 ## Pattern
 
-This class is a part of the [TransportNetworkPattern](TransportNetworkPattern.md) pattern.
+This class is a part of the [TransportNetworkPattern](../TransportNetworkPattern.md) pattern.

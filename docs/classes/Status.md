@@ -14,4 +14,4 @@ The operational status of an entity, e.g., open or closed.
 
 ## Pattern
 
-This class is a part of the [TransportNetworkPattern](TransportNetworkPattern.md) pattern.
+This class is a part of the [TransportNetworkPattern](../TransportNetworkPattern.md) pattern.

@@ -18,4 +18,4 @@ A RoadLinkUserType represents the unique combination of a RoadLink and a UserTyp
 
 ## Pattern
 
-This class is a part of the [RoadNetworkPattern](RoadNetworkPattern.md) pattern.
+This class is a part of the [RoadNetworkPattern](../RoadNetworkPattern.md) pattern.

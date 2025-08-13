@@ -15,4 +15,4 @@ NOTE: Due to the nature of rail, each TrackLink consists of a single lane, but m
 
 ## Pattern
 
-This class is a part of the [RailNetworkPattern](RailNetworkPattern.md) pattern.
+This class is a part of the [RailNetworkPattern](../RailNetworkPattern.md) pattern.

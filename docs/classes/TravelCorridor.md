@@ -15,4 +15,4 @@ NOTE: The extent of a TravelCorridor is defined by the extent of the path that s
 
 ## Pattern
 
-This class is a part of the [TravelCorridorPattern](TravelCorridorPattern.md) pattern.
+This class is a part of the [TravelCorridorPattern](../TravelCorridorPattern.md) pattern.

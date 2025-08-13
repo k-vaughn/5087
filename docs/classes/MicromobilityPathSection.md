@@ -13,4 +13,4 @@ A MicromobilityPathSections is a type of RoadSection that groups MicromobilityLi
 
 ## Pattern
 
-This class is a part of the [MicromobilityNetworkPattern](MicromobilityNetworkPattern.md) pattern.
+This class is a part of the [MicromobilityNetworkPattern](../MicromobilityNetworkPattern.md) pattern.

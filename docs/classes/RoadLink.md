@@ -21,4 +21,4 @@ A RoadLink is a type of TravelledWayLink and transinfras:RoadLink using a stabil
 
 ## Pattern
 
-This class is a part of the [RoadNetworkPattern](RoadNetworkPattern.md) pattern.
+This class is a part of the [RoadNetworkPattern](../RoadNetworkPattern.md) pattern.

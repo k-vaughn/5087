@@ -14,4 +14,4 @@ A TravelledWaySection is a type of NetworkElement that represents an aggregation
 
 ## Pattern
 
-This class is a part of the [TransportNetworkPattern](TransportNetworkPattern.md) pattern.
+This class is a part of the [TransportNetworkPattern](../TransportNetworkPattern.md) pattern.

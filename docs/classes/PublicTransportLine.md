@@ -16,4 +16,4 @@ A PublicTransportLine is one or more routes used by public transport vehicles to
 
 ## Pattern
 
-This class is a part of the [PublicTransportSystemPattern](PublicTransportSystemPattern.md) pattern.
+This class is a part of the [PublicTransportSystemPattern](../PublicTransportSystemPattern.md) pattern.

@@ -13,4 +13,4 @@ A FootpathNetwork is a type of TransportNetwork designed for the use of pedestri
 
 ## Pattern
 
-This class is a part of the [PedestrianNetworkPattern](PedestrianNetworkPattern.md) pattern.
+This class is a part of the [PedestrianNetworkPattern](../PedestrianNetworkPattern.md) pattern.

@@ -16,4 +16,4 @@ A TravelledWaySegment is a type of a transinfras:TravelledWaySegment and Network
 
 ## Pattern
 
-This class is a part of the [TransportNetworkPattern](TransportNetworkPattern.md) pattern.
+This class is a part of the [TransportNetworkPattern](../TransportNetworkPattern.md) pattern.

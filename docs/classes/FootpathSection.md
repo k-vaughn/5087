@@ -13,4 +13,4 @@ A FootpathSection is a type of TravelledWaySection that groups FootpathLinks and
 
 ## Pattern
 
-This class is a part of the [PedestrianNetworkPattern](PedestrianNetworkPattern.md) pattern.
+This class is a part of the [PedestrianNetworkPattern](../PedestrianNetworkPattern.md) pattern.

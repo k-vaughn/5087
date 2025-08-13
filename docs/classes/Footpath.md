@@ -14,4 +14,4 @@ A Footpath is a type of TravelledWay that is made up of FootpathLinks.
 
 ## Pattern
 
-This class is a part of the [PedestrianNetworkPattern](PedestrianNetworkPattern.md) pattern.
+This class is a part of the [PedestrianNetworkPattern](../PedestrianNetworkPattern.md) pattern.

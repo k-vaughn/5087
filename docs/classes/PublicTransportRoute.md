@@ -17,4 +17,4 @@ NOTE: For example, a PublicTransportLine might use an alternate PublicTransportR
 
 ## Pattern
 
-This class is a part of the [PublicTransportSystemPattern](PublicTransportSystemPattern.md) pattern.
+This class is a part of the [PublicTransportSystemPattern](../PublicTransportSystemPattern.md) pattern.

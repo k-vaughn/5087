@@ -13,4 +13,4 @@ A MicromobilityLane is a type of RoadLane that forms part of a MicromobilityPath
 
 ## Pattern
 
-This class is a part of the [MicromobilityNetworkPattern](MicromobilityNetworkPattern.md) pattern.
+This class is a part of the [MicromobilityNetworkPattern](../MicromobilityNetworkPattern.md) pattern.

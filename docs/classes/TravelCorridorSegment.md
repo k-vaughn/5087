@@ -14,4 +14,4 @@ A TravelCorridorSegment is a type of TravelledWaySegment that logically groups m
 
 ## Pattern
 
-This class is a part of the [TravelCorridorPattern](TravelCorridorPattern.md) pattern.
+This class is a part of the [TravelCorridorPattern](../TravelCorridorPattern.md) pattern.

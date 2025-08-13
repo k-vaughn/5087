@@ -13,4 +13,4 @@ A MicromobilityNetwork is a type of RoadNetwork designed for the use of micromob
 
 ## Pattern
 
-This class is a part of the [MicromobilityNetworkPattern](MicromobilityNetworkPattern.md) pattern.
+This class is a part of the [MicromobilityNetworkPattern](../MicromobilityNetworkPattern.md) pattern.

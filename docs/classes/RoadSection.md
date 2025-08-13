@@ -13,4 +13,4 @@ A RoadSection is a type of TravelledWaySection that groups RoadLinks and RoadSeg
 
 ## Pattern
 
-This class is a part of the [RoadNetworkPattern](RoadNetworkPattern.md) pattern.
+This class is a part of the [RoadNetworkPattern](../RoadNetworkPattern.md) pattern.

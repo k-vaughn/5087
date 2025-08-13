@@ -14,4 +14,4 @@ A Road is a type of TravelledWay and transinfras:Road that is made up of RoadLin
 
 ## Pattern
 
-This class is a part of the [RoadNetworkPattern](RoadNetworkPattern.md) pattern.
+This class is a part of the [RoadNetworkPattern](../RoadNetworkPattern.md) pattern.

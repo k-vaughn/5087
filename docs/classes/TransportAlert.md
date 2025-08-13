@@ -12,4 +12,4 @@ A TransportAlert is a type of alert that can be used to notify people of importa
 
 ## Pattern
 
-This class is a part of the [TransportAlertPattern](TransportAlertPattern.md) pattern.
+This class is a part of the [TransportAlertPattern](../TransportAlertPattern.md) pattern.

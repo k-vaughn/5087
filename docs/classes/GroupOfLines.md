@@ -14,4 +14,4 @@ A GroupOfLines is a logical grouping of PublicTransportLines for any useful purp
 
 ## Pattern
 
-This class is a part of the [PublicTransportSystemPattern](PublicTransportSystemPattern.md) pattern.
+This class is a part of the [PublicTransportSystemPattern](../PublicTransportSystemPattern.md) pattern.

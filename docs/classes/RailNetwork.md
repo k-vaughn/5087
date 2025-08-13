@@ -13,4 +13,4 @@ A RailNetwork is a type of TransportNetwork using rails on a stabilized base.
 
 ## Pattern
 
-This class is a part of the [RailNetworkPattern](RailNetworkPattern.md) pattern.
+This class is a part of the [RailNetworkPattern](../RailNetworkPattern.md) pattern.

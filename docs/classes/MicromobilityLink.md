@@ -14,4 +14,4 @@ A MicromobilityLink is a type of RoadLink designed for micromobility vehicles.
 
 ## Pattern
 
-This class is a part of the [MicromobilityNetworkPattern](MicromobilityNetworkPattern.md) pattern.
+This class is a part of the [MicromobilityNetworkPattern](../MicromobilityNetworkPattern.md) pattern.

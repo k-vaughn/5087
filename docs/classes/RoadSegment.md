@@ -23,4 +23,4 @@ NOTE: A RoadSegment can be defined to be a part of a RoadSection, for example, w
 
 ## Pattern
 
-This class is a part of the [RoadNetworkPattern](RoadNetworkPattern.md) pattern.
+This class is a part of the [RoadNetworkPattern](../RoadNetworkPattern.md) pattern.

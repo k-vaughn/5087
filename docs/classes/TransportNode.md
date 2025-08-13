@@ -17,4 +17,4 @@ A TransportNode is a NetworkElement that represents a node on the transport netw
 
 ## Pattern
 
-This class is a part of the [TransportNetworkPattern](TransportNetworkPattern.md) pattern.
+This class is a part of the [TransportNetworkPattern](../TransportNetworkPattern.md) pattern.

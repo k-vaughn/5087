@@ -12,4 +12,4 @@ A PublicTransportSystem provides transport services to members of the public.
 
 ## Pattern
 
-This class is a part of the [PublicTransportSystemPattern](PublicTransportSystemPattern.md) pattern.
+This class is a part of the [PublicTransportSystemPattern](../PublicTransportSystemPattern.md) pattern.

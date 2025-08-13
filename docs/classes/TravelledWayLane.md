@@ -13,4 +13,4 @@ A TravelledWayLane is a NetworkElement that is a portion of TravelledWaySegment 
 
 ## Pattern
 
-This class is a part of the [TransportNetworkPattern](TransportNetworkPattern.md) pattern.
+This class is a part of the [TransportNetworkPattern](../TransportNetworkPattern.md) pattern.

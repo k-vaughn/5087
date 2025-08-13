@@ -6,4 +6,4 @@ A Junction is a TransportNode that allows a traveller to connect from one Travel
 
 ## Pattern
 
-This class is a part of the [TransportNetworkPattern](TransportNetworkPattern.md) pattern.
+This class is a part of the [TransportNetworkPattern](../TransportNetworkPattern.md) pattern.

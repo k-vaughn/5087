@@ -14,4 +14,4 @@ A TravelCorridorLink is a type of TravelledWayLink that is made up of TravelCorr
 
 ## Pattern
 
-This class is a part of the [TravelCorridorPattern](TravelCorridorPattern.md) pattern.
+This class is a part of the [TravelCorridorPattern](../TravelCorridorPattern.md) pattern.

@@ -15,4 +15,4 @@ NOTE: Roads are most commonly associated with motor vehicles, but can be designe
 
 ## Pattern
 
-This class is a part of the [RoadNetworkPattern](RoadNetworkPattern.md) pattern.
+This class is a part of the [RoadNetworkPattern](../RoadNetworkPattern.md) pattern.

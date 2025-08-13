@@ -16,4 +16,4 @@ A TravelledWay is a type of NetworkElement and transinfras:TravelledWay that rep
 
 ## Pattern
 
-This class is a part of the [TransportNetworkPattern](TransportNetworkPattern.md) pattern.
+This class is a part of the [TransportNetworkPattern](../TransportNetworkPattern.md) pattern.
