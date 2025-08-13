@@ -9,7 +9,7 @@ The transport service of the City Data Model consists of the following patterns:
 - [Pedestrian Network Pattern](PedestrianNetworkPattern.md)
 - [Travel Corridor Pattern](TravelCorridorPattern.md)
 - [Public Transport System Pattern](PublicTransportSystemPattern.md)
-- [Alert Pattern](AlertPattern.md)
+- [Transport Alert Pattern](TransportAlertPattern.md)
 
 The formal definition of these patterns is available in [Ontology File Notation](owl/transportnetwork.ofn).
 
