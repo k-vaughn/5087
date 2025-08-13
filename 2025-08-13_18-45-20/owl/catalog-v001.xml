@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base="">
+        <uri id="Automatically generated entry, Timestamp=1753991635592" name="http://ontology.eil.utoronto.ca/5087/1/SpatialLoc/" uri="SpatialLoc.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1753991635592" name="http://ontology.eil.utoronto.ca/5087/2/TransportationInfrastructure/" uri="TransportationInfrastructure.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1753991635592" name="http://ontology.eil.utoronto.ca/5087/Time/" uri="genericproperties.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1753991635592" name="https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Activity/" uri="Activity.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1753991635592" name="https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/CityUnits/" uri="cityunits.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1753991635592" name="https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Mereology/" uri="Mereology.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1753991635592" name="https://standards.iso.org/iso-iec/5087/-1/ed-1/en/ontology/Resource/" uri="Resource.owl"/>
+        <uri id="Automatically generated entry, Timestamp=1753991635592" name="https://standards.iso.org/iso-iec/5087/-2/ed-1/en/ontology/Code/" uri="Code.owl"/>
+    </group>
+</catalog>
