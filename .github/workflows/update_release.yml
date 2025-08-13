@@ -54,8 +54,8 @@ jobs:
           # Replace in Markdown files
           sed -i "s/{{ release_number }}/$RELEASE_TAG/g" docs/index.md
 
-          # Replace in CSS for PDF
-          sed -i "s/{{ release_number }}/$RELEASE_TAG/g" docs/stylesheets/pdf.css
+          # Replace in CSS for PDF -- PDF not generated for this site
+          # sed -i "s/{{ release_number }}/$RELEASE_TAG/g" docs/stylesheets/pdf.css
 
       # Step 6: Run the glossary processing script
 #      - name: Generate glossary annex
